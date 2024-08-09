@@ -1,6 +1,22 @@
 # Copyright (C) 2022 The Qt Company Ltd.
 # SPDX-License-Identifier: BSD-3-Clause
 
+function(qt_internal_set_message_log_level out_var)
+    # Decide whether output should be verbose or not.
+    # Default to verbose (--log-level=STATUS) in a developer-build and
+    # non-verbose (--log-level=NOTICE) otherwise.
+    # If a custom CMAKE_MESSAGE_LOG_LEVEL was specified, it takes priority.
+    # Passing an explicit --log-level=Foo has the highest priority.
+    if(NOT CMAKE_MESSAGE_LOG_LEVEL)
+        if(FEATURE_developer_build OR QT_FEATURE_developer_build)
+            set(CMAKE_MESSAGE_LOG_LEVEL "STATUS")
+        else()
+            set(CMAKE_MESSAGE_LOG_LEVEL "NOTICE")
+        endif()
+        set(${out_var} "${CMAKE_MESSAGE_LOG_LEVEL}" PARENT_SCOPE)
+    endif()
+endfunction()
+
 function(qt_print_feature_summary)
     if(QT_SUPERBUILD)
         qt_internal_set_message_log_level(message_log_level)
@@ -11,7 +27,6 @@ function(qt_print_feature_summary)
         endif()
     endif()
 
-    include(FeatureSummary)
     # Show which packages were found.
     feature_summary(INCLUDE_QUIET_PACKAGES
                     WHAT PACKAGES_FOUND
@@ -43,8 +58,7 @@ endfunction()
 
 function(qt_print_build_instructions)
     if((NOT PROJECT_NAME STREQUAL "QtBase" AND
-        NOT PROJECT_NAME STREQUAL "Qt") OR
-       QT_BUILD_STANDALONE_TESTS)
+        NOT PROJECT_NAME STREQUAL "Qt") OR QT_INTERNAL_BUILD_STANDALONE_PARTS)
 
         return()
     endif()

@@ -7,7 +7,7 @@ if(CMAKE_VERSION VERSION_LESS "2.8.3")
    message(FATAL_ERROR "CMake >= 2.8.3 required")
 endif()
 cmake_policy(PUSH)
-cmake_policy(VERSION 2.8.3...3.26)
+cmake_policy(VERSION 2.8.3...3.28)
 #----------------------------------------------------------------
 # Generated CMake target import file.
 #----------------------------------------------------------------
@@ -62,7 +62,7 @@ set_target_properties(Qt6::syncqt PROPERTIES
   COMPATIBLE_INTERFACE_STRING "QT_MAJOR_VERSION"
   INTERFACE_INCLUDE_DIRECTORIES "${_IMPORT_PREFIX}/include"
   INTERFACE_QT_MAJOR_VERSION "6"
-  _qt_package_version "6.6.1"
+  _qt_package_version "6.7.2"
 )
 
 # Create imported target Qt6::moc
@@ -72,7 +72,7 @@ set_target_properties(Qt6::moc PROPERTIES
   COMPATIBLE_INTERFACE_STRING "QT_MAJOR_VERSION"
   INTERFACE_INCLUDE_DIRECTORIES "${_IMPORT_PREFIX}/include"
   INTERFACE_QT_MAJOR_VERSION "6"
-  _qt_package_version "6.6.1"
+  _qt_package_version "6.7.2"
 )
 
 # Create imported target Qt6::rcc
@@ -82,7 +82,7 @@ set_target_properties(Qt6::rcc PROPERTIES
   COMPATIBLE_INTERFACE_STRING "QT_MAJOR_VERSION"
   INTERFACE_INCLUDE_DIRECTORIES "${_IMPORT_PREFIX}/include"
   INTERFACE_QT_MAJOR_VERSION "6"
-  _qt_package_version "6.6.1"
+  _qt_package_version "6.7.2"
 )
 
 # Create imported target Qt6::tracepointgen
@@ -92,7 +92,7 @@ set_target_properties(Qt6::tracepointgen PROPERTIES
   COMPATIBLE_INTERFACE_STRING "QT_MAJOR_VERSION"
   INTERFACE_INCLUDE_DIRECTORIES "${_IMPORT_PREFIX}/include"
   INTERFACE_QT_MAJOR_VERSION "6"
-  _qt_package_version "6.6.1"
+  _qt_package_version "6.7.2"
 )
 
 # Create imported target Qt6::tracegen
@@ -102,7 +102,7 @@ set_target_properties(Qt6::tracegen PROPERTIES
   COMPATIBLE_INTERFACE_STRING "QT_MAJOR_VERSION"
   INTERFACE_INCLUDE_DIRECTORIES "${_IMPORT_PREFIX}/include"
   INTERFACE_QT_MAJOR_VERSION "6"
-  _qt_package_version "6.6.1"
+  _qt_package_version "6.7.2"
 )
 
 # Create imported target Qt6::cmake_automoc_parser
@@ -112,7 +112,7 @@ set_target_properties(Qt6::cmake_automoc_parser PROPERTIES
   COMPATIBLE_INTERFACE_STRING "QT_MAJOR_VERSION"
   INTERFACE_INCLUDE_DIRECTORIES "${_IMPORT_PREFIX}/include"
   INTERFACE_QT_MAJOR_VERSION "6"
-  _qt_package_version "6.6.1"
+  _qt_package_version "6.7.2"
 )
 
 # Create imported target Qt6::qlalr
@@ -122,7 +122,7 @@ set_target_properties(Qt6::qlalr PROPERTIES
   COMPATIBLE_INTERFACE_STRING "QT_MAJOR_VERSION"
   INTERFACE_INCLUDE_DIRECTORIES "${_IMPORT_PREFIX}/include"
   INTERFACE_QT_MAJOR_VERSION "6"
-  _qt_package_version "6.6.1"
+  _qt_package_version "6.7.2"
 )
 
 # Create imported target Qt6::qtpaths
@@ -132,7 +132,7 @@ set_target_properties(Qt6::qtpaths PROPERTIES
   COMPATIBLE_INTERFACE_STRING "QT_MAJOR_VERSION"
   INTERFACE_INCLUDE_DIRECTORIES "${_IMPORT_PREFIX}/include"
   INTERFACE_QT_MAJOR_VERSION "6"
-  _qt_package_version "6.6.1"
+  _qt_package_version "6.7.2"
 )
 
 # Create imported target Qt6::androiddeployqt
@@ -142,7 +142,7 @@ set_target_properties(Qt6::androiddeployqt PROPERTIES
   COMPATIBLE_INTERFACE_STRING "QT_MAJOR_VERSION"
   INTERFACE_INCLUDE_DIRECTORIES "${_IMPORT_PREFIX}/include"
   INTERFACE_QT_MAJOR_VERSION "6"
-  _qt_package_version "6.6.1"
+  _qt_package_version "6.7.2"
 )
 
 # Create imported target Qt6::androidtestrunner
@@ -152,7 +152,7 @@ set_target_properties(Qt6::androidtestrunner PROPERTIES
   COMPATIBLE_INTERFACE_STRING "QT_MAJOR_VERSION"
   INTERFACE_INCLUDE_DIRECTORIES "${_IMPORT_PREFIX}/include"
   INTERFACE_QT_MAJOR_VERSION "6"
-  _qt_package_version "6.6.1"
+  _qt_package_version "6.7.2"
 )
 
 # Create imported target Qt6::macdeployqt
@@ -162,7 +162,7 @@ set_target_properties(Qt6::macdeployqt PROPERTIES
   COMPATIBLE_INTERFACE_STRING "QT_MAJOR_VERSION"
   INTERFACE_INCLUDE_DIRECTORIES "${_IMPORT_PREFIX}/include"
   INTERFACE_QT_MAJOR_VERSION "6"
-  _qt_package_version "6.6.1"
+  _qt_package_version "6.7.2"
 )
 
 # Create imported target Qt6::qmake
@@ -172,7 +172,7 @@ set_target_properties(Qt6::qmake PROPERTIES
   COMPATIBLE_INTERFACE_STRING "QT_MAJOR_VERSION"
   INTERFACE_INCLUDE_DIRECTORIES "${_IMPORT_PREFIX}/include"
   INTERFACE_QT_MAJOR_VERSION "6"
-  _qt_package_version "6.6.1"
+  _qt_package_version "6.7.2"
 )
 
 # Load information for each installed configuration.
@@ -188,9 +188,12 @@ set(_IMPORT_PREFIX)
 
 # Loop over all imported files and verify that they actually exist
 foreach(_cmake_target IN LISTS _cmake_import_check_targets)
-  foreach(_cmake_file IN LISTS "_cmake_import_check_files_for_${_cmake_target}")
-    if(NOT EXISTS "${_cmake_file}")
-      message(FATAL_ERROR "The imported target \"${_cmake_target}\" references the file
+  if(CMAKE_VERSION VERSION_LESS "3.28"
+      OR NOT DEFINED _cmake_import_check_xcframework_for_${_cmake_target}
+      OR NOT IS_DIRECTORY "${_cmake_import_check_xcframework_for_${_cmake_target}}")
+    foreach(_cmake_file IN LISTS "_cmake_import_check_files_for_${_cmake_target}")
+      if(NOT EXISTS "${_cmake_file}")
+        message(FATAL_ERROR "The imported target \"${_cmake_target}\" references the file
    \"${_cmake_file}\"
 but this file does not exist.  Possible reasons include:
 * The file was deleted, renamed, or moved to another location.
@@ -199,8 +202,9 @@ but this file does not exist.  Possible reasons include:
    \"${CMAKE_CURRENT_LIST_FILE}\"
 but not all the files it references.
 ")
-    endif()
-  endforeach()
+      endif()
+    endforeach()
+  endif()
   unset(_cmake_file)
   unset("_cmake_import_check_files_for_${_cmake_target}")
 endforeach()

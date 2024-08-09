@@ -2,6 +2,167 @@
     {
         "classes": [
             {
+                "className": "QRhiWidget",
+                "enums": [
+                    {
+                        "isClass": true,
+                        "isFlag": false,
+                        "name": "Api",
+                        "values": [
+                            "Null",
+                            "OpenGL",
+                            "Metal",
+                            "Vulkan",
+                            "Direct3D11",
+                            "Direct3D12"
+                        ]
+                    },
+                    {
+                        "isClass": true,
+                        "isFlag": false,
+                        "name": "TextureFormat",
+                        "values": [
+                            "RGBA8",
+                            "RGBA16F",
+                            "RGBA32F",
+                            "RGB10A2"
+                        ]
+                    }
+                ],
+                "object": true,
+                "properties": [
+                    {
+                        "constant": false,
+                        "designable": true,
+                        "final": false,
+                        "index": 0,
+                        "name": "sampleCount",
+                        "notify": "sampleCountChanged",
+                        "read": "sampleCount",
+                        "required": false,
+                        "scriptable": true,
+                        "stored": true,
+                        "type": "int",
+                        "user": false,
+                        "write": "setSampleCount"
+                    },
+                    {
+                        "constant": false,
+                        "designable": true,
+                        "final": false,
+                        "index": 1,
+                        "name": "colorBufferFormat",
+                        "notify": "colorBufferFormatChanged",
+                        "read": "colorBufferFormat",
+                        "required": false,
+                        "scriptable": true,
+                        "stored": true,
+                        "type": "TextureFormat",
+                        "user": false,
+                        "write": "setColorBufferFormat"
+                    },
+                    {
+                        "constant": false,
+                        "designable": true,
+                        "final": false,
+                        "index": 2,
+                        "name": "fixedColorBufferSize",
+                        "notify": "fixedColorBufferSizeChanged",
+                        "read": "fixedColorBufferSize",
+                        "required": false,
+                        "scriptable": true,
+                        "stored": true,
+                        "type": "QSize",
+                        "user": false,
+                        "write": "setFixedColorBufferSize"
+                    },
+                    {
+                        "constant": false,
+                        "designable": true,
+                        "final": false,
+                        "index": 3,
+                        "name": "mirrorVertically",
+                        "notify": "mirrorVerticallyChanged",
+                        "read": "isMirrorVerticallyEnabled",
+                        "required": false,
+                        "scriptable": true,
+                        "stored": true,
+                        "type": "bool",
+                        "user": false,
+                        "write": "setMirrorVertically"
+                    }
+                ],
+                "qualifiedClassName": "QRhiWidget",
+                "signals": [
+                    {
+                        "access": "public",
+                        "name": "frameSubmitted",
+                        "returnType": "void"
+                    },
+                    {
+                        "access": "public",
+                        "name": "renderFailed",
+                        "returnType": "void"
+                    },
+                    {
+                        "access": "public",
+                        "arguments": [
+                            {
+                                "name": "samples",
+                                "type": "int"
+                            }
+                        ],
+                        "name": "sampleCountChanged",
+                        "returnType": "void"
+                    },
+                    {
+                        "access": "public",
+                        "arguments": [
+                            {
+                                "name": "format",
+                                "type": "TextureFormat"
+                            }
+                        ],
+                        "name": "colorBufferFormatChanged",
+                        "returnType": "void"
+                    },
+                    {
+                        "access": "public",
+                        "arguments": [
+                            {
+                                "name": "pixelSize",
+                                "type": "QSize"
+                            }
+                        ],
+                        "name": "fixedColorBufferSizeChanged",
+                        "returnType": "void"
+                    },
+                    {
+                        "access": "public",
+                        "arguments": [
+                            {
+                                "name": "enabled",
+                                "type": "bool"
+                            }
+                        ],
+                        "name": "mirrorVerticallyChanged",
+                        "returnType": "void"
+                    }
+                ],
+                "superClasses": [
+                    {
+                        "access": "public",
+                        "name": "QWidget"
+                    }
+                ]
+            }
+        ],
+        "inputFile": "qrhiwidget.h",
+        "outputRevision": 68
+    },
+    {
+        "classes": [
+            {
                 "className": "QAbstractButton",
                 "object": true,
                 "properties": [
@@ -982,160 +1143,6 @@
                         ],
                         "name": "editorDestroyed",
                         "returnType": "void"
-                    },
-                    {
-                        "access": "private",
-                        "arguments": [
-                            {
-                                "type": "QModelIndex"
-                            },
-                            {
-                                "type": "int"
-                            },
-                            {
-                                "type": "int"
-                            }
-                        ],
-                        "name": "_q_columnsAboutToBeRemoved",
-                        "returnType": "void"
-                    },
-                    {
-                        "access": "private",
-                        "arguments": [
-                            {
-                                "type": "QModelIndex"
-                            },
-                            {
-                                "type": "int"
-                            },
-                            {
-                                "type": "int"
-                            }
-                        ],
-                        "name": "_q_columnsRemoved",
-                        "returnType": "void"
-                    },
-                    {
-                        "access": "private",
-                        "arguments": [
-                            {
-                                "type": "QModelIndex"
-                            },
-                            {
-                                "type": "int"
-                            },
-                            {
-                                "type": "int"
-                            }
-                        ],
-                        "name": "_q_columnsInserted",
-                        "returnType": "void"
-                    },
-                    {
-                        "access": "private",
-                        "arguments": [
-                            {
-                                "type": "QModelIndex"
-                            },
-                            {
-                                "type": "int"
-                            },
-                            {
-                                "type": "int"
-                            }
-                        ],
-                        "name": "_q_rowsInserted",
-                        "returnType": "void"
-                    },
-                    {
-                        "access": "private",
-                        "arguments": [
-                            {
-                                "type": "QModelIndex"
-                            },
-                            {
-                                "type": "int"
-                            },
-                            {
-                                "type": "int"
-                            }
-                        ],
-                        "name": "_q_rowsRemoved",
-                        "returnType": "void"
-                    },
-                    {
-                        "access": "private",
-                        "arguments": [
-                            {
-                                "type": "QModelIndex"
-                            },
-                            {
-                                "type": "int"
-                            },
-                            {
-                                "type": "int"
-                            },
-                            {
-                                "type": "QModelIndex"
-                            },
-                            {
-                                "type": "int"
-                            }
-                        ],
-                        "name": "_q_columnsMoved",
-                        "returnType": "void"
-                    },
-                    {
-                        "access": "private",
-                        "arguments": [
-                            {
-                                "type": "QModelIndex"
-                            },
-                            {
-                                "type": "int"
-                            },
-                            {
-                                "type": "int"
-                            },
-                            {
-                                "type": "QModelIndex"
-                            },
-                            {
-                                "type": "int"
-                            }
-                        ],
-                        "name": "_q_rowsMoved",
-                        "returnType": "void"
-                    },
-                    {
-                        "access": "private",
-                        "name": "_q_modelDestroyed",
-                        "returnType": "void"
-                    },
-                    {
-                        "access": "private",
-                        "name": "_q_layoutChanged",
-                        "returnType": "void"
-                    },
-                    {
-                        "access": "private",
-                        "name": "_q_headerDataChanged",
-                        "returnType": "void"
-                    },
-                    {
-                        "access": "private",
-                        "name": "_q_scrollerStateChanged",
-                        "returnType": "void"
-                    },
-                    {
-                        "access": "private",
-                        "arguments": [
-                            {
-                                "type": "QModelIndex"
-                            }
-                        ],
-                        "name": "_q_delegateSizeHintChanged",
-                        "returnType": "void"
                     }
                 ],
                 "superClasses": [
@@ -1768,29 +1775,6 @@
                     {
                         "access": "public",
                         "name": "clear",
-                        "returnType": "void"
-                    },
-                    {
-                        "access": "private",
-                        "arguments": [
-                            {
-                                "type": "QString"
-                            }
-                        ],
-                        "name": "_q_editorTextChanged",
-                        "returnType": "void"
-                    },
-                    {
-                        "access": "private",
-                        "arguments": [
-                            {
-                                "type": "int"
-                            },
-                            {
-                                "type": "int"
-                            }
-                        ],
-                        "name": "_q_editorCursorPositionChanged",
                         "returnType": "void"
                     }
                 ],
@@ -2597,6 +2581,16 @@
                         ],
                         "name": "stateChanged",
                         "returnType": "void"
+                    },
+                    {
+                        "access": "public",
+                        "arguments": [
+                            {
+                                "type": "Qt::CheckState"
+                            }
+                        ],
+                        "name": "checkStateChanged",
+                        "returnType": "void"
                     }
                 ],
                 "superClasses": [
@@ -2622,7 +2616,8 @@
                         "values": [
                             "ShowAlphaChannel",
                             "NoButtons",
-                            "DontUseNativeDialog"
+                            "DontUseNativeDialog",
+                            "NoEyeDropperButton"
                         ]
                     }
                 ],
@@ -2683,92 +2678,6 @@
                         "returnType": "void"
                     }
                 ],
-                "slots": [
-                    {
-                        "access": "private",
-                        "name": "_q_addCustom",
-                        "returnType": "void"
-                    },
-                    {
-                        "access": "private",
-                        "arguments": [
-                            {
-                                "name": "h",
-                                "type": "int"
-                            },
-                            {
-                                "name": "s",
-                                "type": "int"
-                            },
-                            {
-                                "name": "v",
-                                "type": "int"
-                            }
-                        ],
-                        "name": "_q_newHsv",
-                        "returnType": "void"
-                    },
-                    {
-                        "access": "private",
-                        "arguments": [
-                            {
-                                "name": "rgb",
-                                "type": "QRgb"
-                            }
-                        ],
-                        "name": "_q_newColorTypedIn",
-                        "returnType": "void"
-                    },
-                    {
-                        "access": "private",
-                        "arguments": [
-                            {
-                                "type": "int"
-                            },
-                            {
-                                "type": "int"
-                            }
-                        ],
-                        "name": "_q_nextCustom",
-                        "returnType": "void"
-                    },
-                    {
-                        "access": "private",
-                        "arguments": [
-                            {
-                                "type": "int"
-                            },
-                            {
-                                "type": "int"
-                            }
-                        ],
-                        "name": "_q_newCustom",
-                        "returnType": "void"
-                    },
-                    {
-                        "access": "private",
-                        "arguments": [
-                            {
-                                "type": "int"
-                            },
-                            {
-                                "type": "int"
-                            }
-                        ],
-                        "name": "_q_newStandard",
-                        "returnType": "void"
-                    },
-                    {
-                        "access": "private",
-                        "name": "_q_pickScreenColor",
-                        "returnType": "void"
-                    },
-                    {
-                        "access": "private",
-                        "name": "_q_updateColorPicking",
-                        "returnType": "void"
-                    }
-                ],
                 "superClasses": [
                     {
                         "access": "public",
@@ -2812,33 +2721,6 @@
                             }
                         ],
                         "name": "updatePreviewWidget",
-                        "returnType": "void"
-                    }
-                ],
-                "slots": [
-                    {
-                        "access": "private",
-                        "arguments": [
-                            {
-                                "type": "int"
-                            }
-                        ],
-                        "name": "_q_gripMoved",
-                        "returnType": "void"
-                    },
-                    {
-                        "access": "private",
-                        "name": "_q_changeCurrentColumn",
-                        "returnType": "void"
-                    },
-                    {
-                        "access": "private",
-                        "arguments": [
-                            {
-                                "type": "QModelIndex"
-                            }
-                        ],
-                        "name": "_q_clicked",
                         "returnType": "void"
                     }
                 ],
@@ -3447,13 +3329,6 @@
                 "className": "QCommonStyle",
                 "object": true,
                 "qualifiedClassName": "QCommonStyle",
-                "slots": [
-                    {
-                        "access": "private",
-                        "name": "_q_removeAnimation",
-                        "returnType": "void"
-                    }
-                ],
                 "superClasses": [
                     {
                         "access": "public",
@@ -3922,50 +3797,6 @@
                         ],
                         "name": "setCurrentModelIndex",
                         "returnType": "void"
-                    },
-                    {
-                        "access": "private",
-                        "arguments": [
-                            {
-                                "type": "QModelIndex"
-                            },
-                            {
-                                "type": "QModelIndex"
-                            },
-                            {
-                                "type": "QList<int>"
-                            }
-                        ],
-                        "name": "_q_dataChanged",
-                        "returnType": "void"
-                    },
-                    {
-                        "access": "private",
-                        "arguments": [
-                            {
-                                "type": "QWidget*"
-                            }
-                        ],
-                        "name": "_q_commitData",
-                        "returnType": "void"
-                    },
-                    {
-                        "access": "private",
-                        "arguments": [
-                            {
-                                "type": "QWidget*"
-                            },
-                            {
-                                "type": "QAbstractItemDelegate::EndEditHint"
-                            }
-                        ],
-                        "name": "_q_closeEditor",
-                        "returnType": "void"
-                    },
-                    {
-                        "access": "private",
-                        "name": "_q_modelDestroyed",
-                        "returnType": "void"
                     }
                 ],
                 "superClasses": [
@@ -4254,6 +4085,20 @@
                         "type": "Qt::TimeSpec",
                         "user": false,
                         "write": "setTimeSpec"
+                    },
+                    {
+                        "constant": false,
+                        "designable": true,
+                        "final": false,
+                        "index": 16,
+                        "name": "timeZone",
+                        "read": "timeZone",
+                        "required": false,
+                        "scriptable": true,
+                        "stored": true,
+                        "type": "QTimeZone",
+                        "user": false,
+                        "write": "setTimeZone"
                     }
                 ],
                 "qualifiedClassName": "QDateTimeEdit",
@@ -4958,23 +4803,6 @@
                         "returnType": "void"
                     }
                 ],
-                "slots": [
-                    {
-                        "access": "private",
-                        "arguments": [
-                            {
-                                "type": "bool"
-                            }
-                        ],
-                        "name": "_q_toggleView",
-                        "returnType": "void"
-                    },
-                    {
-                        "access": "private",
-                        "name": "_q_toggleTopLevel",
-                        "returnType": "void"
-                    }
-                ],
                 "superClasses": [
                     {
                         "access": "public",
@@ -5301,234 +5129,6 @@
                         "returnType": "void"
                     }
                 ],
-                "slots": [
-                    {
-                        "access": "private",
-                        "arguments": [
-                            {
-                                "type": "QString"
-                            }
-                        ],
-                        "name": "_q_pathChanged",
-                        "returnType": "void"
-                    },
-                    {
-                        "access": "private",
-                        "name": "_q_navigateBackward",
-                        "returnType": "void"
-                    },
-                    {
-                        "access": "private",
-                        "name": "_q_navigateForward",
-                        "returnType": "void"
-                    },
-                    {
-                        "access": "private",
-                        "name": "_q_navigateToParent",
-                        "returnType": "void"
-                    },
-                    {
-                        "access": "private",
-                        "name": "_q_createDirectory",
-                        "returnType": "void"
-                    },
-                    {
-                        "access": "private",
-                        "name": "_q_showListView",
-                        "returnType": "void"
-                    },
-                    {
-                        "access": "private",
-                        "name": "_q_showDetailsView",
-                        "returnType": "void"
-                    },
-                    {
-                        "access": "private",
-                        "arguments": [
-                            {
-                                "type": "QPoint"
-                            }
-                        ],
-                        "name": "_q_showContextMenu",
-                        "returnType": "void"
-                    },
-                    {
-                        "access": "private",
-                        "name": "_q_renameCurrent",
-                        "returnType": "void"
-                    },
-                    {
-                        "access": "private",
-                        "name": "_q_deleteCurrent",
-                        "returnType": "void"
-                    },
-                    {
-                        "access": "private",
-                        "name": "_q_showHidden",
-                        "returnType": "void"
-                    },
-                    {
-                        "access": "private",
-                        "name": "_q_updateOkButton",
-                        "returnType": "void"
-                    },
-                    {
-                        "access": "private",
-                        "arguments": [
-                            {
-                                "name": "index",
-                                "type": "QModelIndex"
-                            }
-                        ],
-                        "name": "_q_currentChanged",
-                        "returnType": "void"
-                    },
-                    {
-                        "access": "private",
-                        "arguments": [
-                            {
-                                "name": "index",
-                                "type": "QModelIndex"
-                            }
-                        ],
-                        "name": "_q_enterDirectory",
-                        "returnType": "void"
-                    },
-                    {
-                        "access": "private",
-                        "arguments": [
-                            {
-                                "type": "QUrl"
-                            }
-                        ],
-                        "name": "_q_emitUrlSelected",
-                        "returnType": "void"
-                    },
-                    {
-                        "access": "private",
-                        "arguments": [
-                            {
-                                "type": "QList<QUrl>"
-                            }
-                        ],
-                        "name": "_q_emitUrlsSelected",
-                        "returnType": "void"
-                    },
-                    {
-                        "access": "private",
-                        "arguments": [
-                            {
-                                "type": "QUrl"
-                            }
-                        ],
-                        "name": "_q_nativeCurrentChanged",
-                        "returnType": "void"
-                    },
-                    {
-                        "access": "private",
-                        "arguments": [
-                            {
-                                "type": "QUrl"
-                            }
-                        ],
-                        "name": "_q_nativeEnterDirectory",
-                        "returnType": "void"
-                    },
-                    {
-                        "access": "private",
-                        "arguments": [
-                            {
-                                "name": "path",
-                                "type": "QString"
-                            }
-                        ],
-                        "name": "_q_goToDirectory",
-                        "returnType": "void"
-                    },
-                    {
-                        "access": "private",
-                        "arguments": [
-                            {
-                                "name": "index",
-                                "type": "int"
-                            }
-                        ],
-                        "name": "_q_useNameFilter",
-                        "returnType": "void"
-                    },
-                    {
-                        "access": "private",
-                        "name": "_q_selectionChanged",
-                        "returnType": "void"
-                    },
-                    {
-                        "access": "private",
-                        "arguments": [
-                            {
-                                "name": "url",
-                                "type": "QUrl"
-                            }
-                        ],
-                        "name": "_q_goToUrl",
-                        "returnType": "void"
-                    },
-                    {
-                        "access": "private",
-                        "name": "_q_goHome",
-                        "returnType": "void"
-                    },
-                    {
-                        "access": "private",
-                        "arguments": [
-                            {
-                                "type": "QAction*"
-                            }
-                        ],
-                        "name": "_q_showHeader",
-                        "returnType": "void"
-                    },
-                    {
-                        "access": "private",
-                        "arguments": [
-                            {
-                                "name": "text",
-                                "type": "QString"
-                            }
-                        ],
-                        "name": "_q_autoCompleteFileName",
-                        "returnType": "void"
-                    },
-                    {
-                        "access": "private",
-                        "arguments": [
-                            {
-                                "name": "parent",
-                                "type": "QModelIndex"
-                            }
-                        ],
-                        "name": "_q_rowsInserted",
-                        "returnType": "void"
-                    },
-                    {
-                        "access": "private",
-                        "arguments": [
-                            {
-                                "name": "path",
-                                "type": "QString"
-                            },
-                            {
-                                "name": "oldName",
-                                "type": "QString"
-                            },
-                            {
-                                "name": "newName",
-                                "type": "QString"
-                            }
-                        ],
-                        "name": "_q_fileRenamed",
-                        "returnType": "void"
-                    }
-                ],
                 "superClasses": [
                     {
                         "access": "public",
@@ -5664,21 +5264,6 @@
                         ],
                         "name": "setCurrentFont",
                         "returnType": "void"
-                    },
-                    {
-                        "access": "private",
-                        "arguments": [
-                            {
-                                "type": "QString"
-                            }
-                        ],
-                        "name": "_q_currentChanged",
-                        "returnType": "void"
-                    },
-                    {
-                        "access": "private",
-                        "name": "_q_updateModel",
-                        "returnType": "void"
                     }
                 ],
                 "superClasses": [
@@ -5765,63 +5350,6 @@
                             }
                         ],
                         "name": "fontSelected",
-                        "returnType": "void"
-                    }
-                ],
-                "slots": [
-                    {
-                        "access": "private",
-                        "arguments": [
-                            {
-                                "type": "QString"
-                            }
-                        ],
-                        "name": "_q_sizeChanged",
-                        "returnType": "void"
-                    },
-                    {
-                        "access": "private",
-                        "arguments": [
-                            {
-                                "type": "int"
-                            }
-                        ],
-                        "name": "_q_familyHighlighted",
-                        "returnType": "void"
-                    },
-                    {
-                        "access": "private",
-                        "arguments": [
-                            {
-                                "type": "int"
-                            }
-                        ],
-                        "name": "_q_writingSystemHighlighted",
-                        "returnType": "void"
-                    },
-                    {
-                        "access": "private",
-                        "arguments": [
-                            {
-                                "type": "int"
-                            }
-                        ],
-                        "name": "_q_styleHighlighted",
-                        "returnType": "void"
-                    },
-                    {
-                        "access": "private",
-                        "arguments": [
-                            {
-                                "type": "int"
-                            }
-                        ],
-                        "name": "_q_sizeHighlighted",
-                        "returnType": "void"
-                    },
-                    {
-                        "access": "private",
-                        "name": "_q_updateSample",
                         "returnType": "void"
                     }
                 ],
@@ -9501,145 +9029,6 @@
                         ],
                         "name": "sectionsAboutToBeRemoved",
                         "returnType": "void"
-                    },
-                    {
-                        "access": "private",
-                        "arguments": [
-                            {
-                                "name": "parent",
-                                "type": "QModelIndex"
-                            },
-                            {
-                                "name": "logicalFirst",
-                                "type": "int"
-                            },
-                            {
-                                "name": "logicalLast",
-                                "type": "int"
-                            }
-                        ],
-                        "name": "_q_sectionsRemoved",
-                        "returnType": "void"
-                    },
-                    {
-                        "access": "private",
-                        "arguments": [
-                            {
-                                "name": "sourceParent",
-                                "type": "QModelIndex"
-                            },
-                            {
-                                "name": "logicalStart",
-                                "type": "int"
-                            },
-                            {
-                                "name": "logicalEnd",
-                                "type": "int"
-                            },
-                            {
-                                "name": "destinationParent",
-                                "type": "QModelIndex"
-                            },
-                            {
-                                "name": "logicalDestination",
-                                "type": "int"
-                            }
-                        ],
-                        "name": "_q_sectionsAboutToBeMoved",
-                        "returnType": "void"
-                    },
-                    {
-                        "access": "private",
-                        "arguments": [
-                            {
-                                "name": "sourceParent",
-                                "type": "QModelIndex"
-                            },
-                            {
-                                "name": "logicalStart",
-                                "type": "int"
-                            },
-                            {
-                                "name": "logicalEnd",
-                                "type": "int"
-                            },
-                            {
-                                "name": "destinationParent",
-                                "type": "QModelIndex"
-                            },
-                            {
-                                "name": "logicalDestination",
-                                "type": "int"
-                            }
-                        ],
-                        "name": "_q_sectionsMoved",
-                        "returnType": "void"
-                    },
-                    {
-                        "access": "private",
-                        "arguments": [
-                            {
-                                "name": "parents",
-                                "type": "QList<QPersistentModelIndex>"
-                            },
-                            {
-                                "name": "hint",
-                                "type": "QAbstractItemModel::LayoutChangeHint"
-                            }
-                        ],
-                        "name": "_q_sectionsAboutToBeChanged",
-                        "returnType": "void"
-                    },
-                    {
-                        "access": "private",
-                        "arguments": [
-                            {
-                                "name": "parents",
-                                "type": "QList<QPersistentModelIndex>"
-                            }
-                        ],
-                        "isCloned": true,
-                        "name": "_q_sectionsAboutToBeChanged",
-                        "returnType": "void"
-                    },
-                    {
-                        "access": "private",
-                        "isCloned": true,
-                        "name": "_q_sectionsAboutToBeChanged",
-                        "returnType": "void"
-                    },
-                    {
-                        "access": "private",
-                        "arguments": [
-                            {
-                                "name": "parents",
-                                "type": "QList<QPersistentModelIndex>"
-                            },
-                            {
-                                "name": "hint",
-                                "type": "QAbstractItemModel::LayoutChangeHint"
-                            }
-                        ],
-                        "name": "_q_sectionsChanged",
-                        "returnType": "void"
-                    },
-                    {
-                        "access": "private",
-                        "arguments": [
-                            {
-                                "name": "parents",
-                                "type": "QList<QPersistentModelIndex>"
-                            }
-                        ],
-                        "isCloned": true,
-                        "name": "_q_sectionsChanged",
-                        "returnType": "void"
-                    },
-                    {
-                        "access": "private",
-                        "isCloned": true,
-                        "name": "_q_sectionsChanged",
-                        "returnType": "void"
                     }
                 ],
                 "superClasses": [
@@ -9724,36 +9113,6 @@
                             }
                         ],
                         "name": "doubleValueSelected",
-                        "returnType": "void"
-                    }
-                ],
-                "slots": [
-                    {
-                        "access": "private",
-                        "arguments": [
-                            {
-                                "type": "QString"
-                            }
-                        ],
-                        "name": "_q_textChanged",
-                        "returnType": "void"
-                    },
-                    {
-                        "access": "private",
-                        "name": "_q_plainTextEditTextChanged",
-                        "returnType": "void"
-                    },
-                    {
-                        "access": "private",
-                        "arguments": [
-                            {
-                                "type": "QModelIndex"
-                            },
-                            {
-                                "type": "QModelIndex"
-                            }
-                        ],
-                        "name": "_q_currentRowChanged",
                         "returnType": "void"
                     }
                 ],
@@ -10211,41 +9570,6 @@
                     {
                         "access": "public",
                         "name": "clear",
-                        "returnType": "void"
-                    },
-                    {
-                        "access": "private",
-                        "arguments": [
-                            {
-                                "type": "QRect"
-                            }
-                        ],
-                        "name": "_q_movieUpdated",
-                        "returnType": "void"
-                    },
-                    {
-                        "access": "private",
-                        "arguments": [
-                            {
-                                "type": "QSize"
-                            }
-                        ],
-                        "name": "_q_movieResized",
-                        "returnType": "void"
-                    },
-                    {
-                        "access": "private",
-                        "arguments": [
-                            {
-                                "type": "QString"
-                            }
-                        ],
-                        "name": "_q_linkHovered",
-                        "returnType": "void"
-                    },
-                    {
-                        "access": "private",
-                        "name": "_q_buddyDeleted",
                         "returnType": "void"
                     }
                 ],
@@ -10947,79 +10271,6 @@
                         "access": "public",
                         "name": "paste",
                         "returnType": "void"
-                    },
-                    {
-                        "access": "private",
-                        "name": "_q_handleWindowActivate",
-                        "returnType": "void"
-                    },
-                    {
-                        "access": "private",
-                        "arguments": [
-                            {
-                                "type": "QString"
-                            }
-                        ],
-                        "name": "_q_textEdited",
-                        "returnType": "void"
-                    },
-                    {
-                        "access": "private",
-                        "arguments": [
-                            {
-                                "type": "int"
-                            },
-                            {
-                                "type": "int"
-                            }
-                        ],
-                        "name": "_q_cursorPositionChanged",
-                        "returnType": "void"
-                    },
-                    {
-                        "access": "private",
-                        "arguments": [
-                            {
-                                "type": "QString"
-                            }
-                        ],
-                        "name": "_q_completionHighlighted",
-                        "returnType": "void"
-                    },
-                    {
-                        "access": "private",
-                        "name": "_q_selectionChanged",
-                        "returnType": "void"
-                    },
-                    {
-                        "access": "private",
-                        "arguments": [
-                            {
-                                "type": "QRect"
-                            }
-                        ],
-                        "name": "_q_updateNeeded",
-                        "returnType": "void"
-                    },
-                    {
-                        "access": "private",
-                        "arguments": [
-                            {
-                                "type": "QString"
-                            }
-                        ],
-                        "name": "_q_textChanged",
-                        "returnType": "void"
-                    },
-                    {
-                        "access": "private",
-                        "name": "_q_clearButtonClicked",
-                        "returnType": "void"
-                    },
-                    {
-                        "access": "private",
-                        "name": "_q_controlEditingFinished",
-                        "returnType": "void"
                     }
                 ],
                 "superClasses": [
@@ -11545,107 +10796,6 @@
                     {
                         "access": "public",
                         "name": "clear",
-                        "returnType": "void"
-                    },
-                    {
-                        "access": "private",
-                        "arguments": [
-                            {
-                                "name": "index",
-                                "type": "QModelIndex"
-                            }
-                        ],
-                        "name": "_q_emitItemPressed",
-                        "returnType": "void"
-                    },
-                    {
-                        "access": "private",
-                        "arguments": [
-                            {
-                                "name": "index",
-                                "type": "QModelIndex"
-                            }
-                        ],
-                        "name": "_q_emitItemClicked",
-                        "returnType": "void"
-                    },
-                    {
-                        "access": "private",
-                        "arguments": [
-                            {
-                                "name": "index",
-                                "type": "QModelIndex"
-                            }
-                        ],
-                        "name": "_q_emitItemDoubleClicked",
-                        "returnType": "void"
-                    },
-                    {
-                        "access": "private",
-                        "arguments": [
-                            {
-                                "name": "index",
-                                "type": "QModelIndex"
-                            }
-                        ],
-                        "name": "_q_emitItemActivated",
-                        "returnType": "void"
-                    },
-                    {
-                        "access": "private",
-                        "arguments": [
-                            {
-                                "name": "index",
-                                "type": "QModelIndex"
-                            }
-                        ],
-                        "name": "_q_emitItemEntered",
-                        "returnType": "void"
-                    },
-                    {
-                        "access": "private",
-                        "arguments": [
-                            {
-                                "name": "index",
-                                "type": "QModelIndex"
-                            }
-                        ],
-                        "name": "_q_emitItemChanged",
-                        "returnType": "void"
-                    },
-                    {
-                        "access": "private",
-                        "arguments": [
-                            {
-                                "name": "previous",
-                                "type": "QModelIndex"
-                            },
-                            {
-                                "name": "current",
-                                "type": "QModelIndex"
-                            }
-                        ],
-                        "name": "_q_emitCurrentItemChanged",
-                        "returnType": "void"
-                    },
-                    {
-                        "access": "private",
-                        "name": "_q_sort",
-                        "returnType": "void"
-                    },
-                    {
-                        "access": "private",
-                        "arguments": [
-                            {
-                                "name": "topLeft",
-                                "type": "QModelIndex"
-                            },
-                            {
-                                "name": "bottomRight",
-                                "type": "QModelIndex"
-                            }
-                        ],
-                        "name": "_q_dataChanged",
                         "returnType": "void"
                     }
                 ],
@@ -12631,6 +11781,58 @@
                         ]
                     },
                     {
+                        "isClass": false,
+                        "isFlag": false,
+                        "name": "ButtonRole",
+                        "values": [
+                            "InvalidRole",
+                            "AcceptRole",
+                            "RejectRole",
+                            "DestructiveRole",
+                            "ActionRole",
+                            "HelpRole",
+                            "YesRole",
+                            "NoRole",
+                            "ResetRole",
+                            "ApplyRole",
+                            "NRoles"
+                        ]
+                    },
+                    {
+                        "isClass": false,
+                        "isFlag": false,
+                        "name": "StandardButton",
+                        "values": [
+                            "NoButton",
+                            "Ok",
+                            "Save",
+                            "SaveAll",
+                            "Open",
+                            "Yes",
+                            "YesToAll",
+                            "No",
+                            "NoToAll",
+                            "Abort",
+                            "Retry",
+                            "Ignore",
+                            "Close",
+                            "Cancel",
+                            "Discard",
+                            "Help",
+                            "Apply",
+                            "Reset",
+                            "RestoreDefaults",
+                            "FirstButton",
+                            "LastButton",
+                            "YesAll",
+                            "NoAll",
+                            "Default",
+                            "Escape",
+                            "FlagMask",
+                            "ButtonMask"
+                        ]
+                    },
+                    {
                         "alias": "StandardButton",
                         "isClass": false,
                         "isFlag": true,
@@ -12806,31 +12008,6 @@
                             }
                         ],
                         "name": "buttonClicked",
-                        "returnType": "void"
-                    }
-                ],
-                "slots": [
-                    {
-                        "access": "private",
-                        "arguments": [
-                            {
-                                "type": "QAbstractButton*"
-                            }
-                        ],
-                        "name": "_q_buttonClicked",
-                        "returnType": "void"
-                    },
-                    {
-                        "access": "private",
-                        "arguments": [
-                            {
-                                "type": "QPlatformDialogHelper::StandardButton"
-                            },
-                            {
-                                "type": "QPlatformDialogHelper::ButtonRole"
-                            }
-                        ],
-                        "name": "_q_helperClicked",
                         "returnType": "void"
                     }
                 ],
@@ -13990,11 +13167,6 @@
                     {
                         "access": "public",
                         "name": "showMenu",
-                        "returnType": "void"
-                    },
-                    {
-                        "access": "private",
-                        "name": "_q_popupPressed",
                         "returnType": "void"
                     }
                 ],
@@ -16700,16 +15872,6 @@
                         ],
                         "name": "setCurrentIndex",
                         "returnType": "void"
-                    },
-                    {
-                        "access": "private",
-                        "name": "_q_scrollTabs",
-                        "returnType": "void"
-                    },
-                    {
-                        "access": "private",
-                        "name": "_q_closeTab",
-                        "returnType": "void"
                     }
                 ],
                 "superClasses": [
@@ -17030,105 +16192,6 @@
                             }
                         ],
                         "name": "columnCountChanged",
-                        "returnType": "void"
-                    },
-                    {
-                        "access": "private",
-                        "arguments": [
-                            {
-                                "type": "int"
-                            }
-                        ],
-                        "name": "_q_selectRow",
-                        "returnType": "void"
-                    },
-                    {
-                        "access": "private",
-                        "arguments": [
-                            {
-                                "type": "int"
-                            }
-                        ],
-                        "name": "_q_selectColumn",
-                        "returnType": "void"
-                    },
-                    {
-                        "access": "private",
-                        "arguments": [
-                            {
-                                "type": "QModelIndex"
-                            },
-                            {
-                                "type": "int"
-                            },
-                            {
-                                "type": "int"
-                            }
-                        ],
-                        "name": "_q_updateSpanInsertedRows",
-                        "returnType": "void"
-                    },
-                    {
-                        "access": "private",
-                        "arguments": [
-                            {
-                                "type": "QModelIndex"
-                            },
-                            {
-                                "type": "int"
-                            },
-                            {
-                                "type": "int"
-                            }
-                        ],
-                        "name": "_q_updateSpanInsertedColumns",
-                        "returnType": "void"
-                    },
-                    {
-                        "access": "private",
-                        "arguments": [
-                            {
-                                "type": "QModelIndex"
-                            },
-                            {
-                                "type": "int"
-                            },
-                            {
-                                "type": "int"
-                            }
-                        ],
-                        "name": "_q_updateSpanRemovedRows",
-                        "returnType": "void"
-                    },
-                    {
-                        "access": "private",
-                        "arguments": [
-                            {
-                                "type": "QModelIndex"
-                            },
-                            {
-                                "type": "int"
-                            },
-                            {
-                                "type": "int"
-                            }
-                        ],
-                        "name": "_q_updateSpanRemovedColumns",
-                        "returnType": "void"
-                    },
-                    {
-                        "access": "private",
-                        "arguments": [
-                            {
-                                "name": "column",
-                                "type": "int"
-                            },
-                            {
-                                "name": "order",
-                                "type": "Qt::SortOrder"
-                            }
-                        ],
-                        "name": "_q_sortIndicatorChanged",
                         "returnType": "void"
                     }
                 ],
@@ -17461,107 +16524,6 @@
                         "access": "public",
                         "name": "clearContents",
                         "returnType": "void"
-                    },
-                    {
-                        "access": "private",
-                        "arguments": [
-                            {
-                                "name": "index",
-                                "type": "QModelIndex"
-                            }
-                        ],
-                        "name": "_q_emitItemPressed",
-                        "returnType": "void"
-                    },
-                    {
-                        "access": "private",
-                        "arguments": [
-                            {
-                                "name": "index",
-                                "type": "QModelIndex"
-                            }
-                        ],
-                        "name": "_q_emitItemClicked",
-                        "returnType": "void"
-                    },
-                    {
-                        "access": "private",
-                        "arguments": [
-                            {
-                                "name": "index",
-                                "type": "QModelIndex"
-                            }
-                        ],
-                        "name": "_q_emitItemDoubleClicked",
-                        "returnType": "void"
-                    },
-                    {
-                        "access": "private",
-                        "arguments": [
-                            {
-                                "name": "index",
-                                "type": "QModelIndex"
-                            }
-                        ],
-                        "name": "_q_emitItemActivated",
-                        "returnType": "void"
-                    },
-                    {
-                        "access": "private",
-                        "arguments": [
-                            {
-                                "name": "index",
-                                "type": "QModelIndex"
-                            }
-                        ],
-                        "name": "_q_emitItemEntered",
-                        "returnType": "void"
-                    },
-                    {
-                        "access": "private",
-                        "arguments": [
-                            {
-                                "name": "index",
-                                "type": "QModelIndex"
-                            }
-                        ],
-                        "name": "_q_emitItemChanged",
-                        "returnType": "void"
-                    },
-                    {
-                        "access": "private",
-                        "arguments": [
-                            {
-                                "name": "previous",
-                                "type": "QModelIndex"
-                            },
-                            {
-                                "name": "current",
-                                "type": "QModelIndex"
-                            }
-                        ],
-                        "name": "_q_emitCurrentItemChanged",
-                        "returnType": "void"
-                    },
-                    {
-                        "access": "private",
-                        "name": "_q_sort",
-                        "returnType": "void"
-                    },
-                    {
-                        "access": "private",
-                        "arguments": [
-                            {
-                                "name": "topLeft",
-                                "type": "QModelIndex"
-                            },
-                            {
-                                "name": "bottomRight",
-                                "type": "QModelIndex"
-                            }
-                        ],
-                        "name": "_q_dataChanged",
-                        "returnType": "void"
                     }
                 ],
                 "superClasses": [
@@ -17855,39 +16817,6 @@
                         ],
                         "name": "setCurrentWidget",
                         "returnType": "void"
-                    },
-                    {
-                        "access": "private",
-                        "arguments": [
-                            {
-                                "type": "int"
-                            }
-                        ],
-                        "name": "_q_showTab",
-                        "returnType": "void"
-                    },
-                    {
-                        "access": "private",
-                        "arguments": [
-                            {
-                                "type": "int"
-                            }
-                        ],
-                        "name": "_q_removeTab",
-                        "returnType": "void"
-                    },
-                    {
-                        "access": "private",
-                        "arguments": [
-                            {
-                                "type": "int"
-                            },
-                            {
-                                "type": "int"
-                            }
-                        ],
-                        "name": "_q_tabMoved",
-                        "returnType": "void"
                     }
                 ],
                 "superClasses": [
@@ -18081,31 +17010,6 @@
                     {
                         "access": "public",
                         "name": "reload",
-                        "returnType": "void"
-                    },
-                    {
-                        "access": "private",
-                        "name": "_q_documentModified",
-                        "returnType": "void"
-                    },
-                    {
-                        "access": "private",
-                        "arguments": [
-                            {
-                                "type": "QString"
-                            }
-                        ],
-                        "name": "_q_activateAnchor",
-                        "returnType": "void"
-                    },
-                    {
-                        "access": "private",
-                        "arguments": [
-                            {
-                                "type": "QString"
-                            }
-                        ],
-                        "name": "_q_highlightLink",
                         "returnType": "void"
                     }
                 ],
@@ -18741,57 +17645,6 @@
                         "isCloned": true,
                         "name": "zoomOut",
                         "returnType": "void"
-                    },
-                    {
-                        "access": "private",
-                        "arguments": [
-                            {
-                                "name": "r",
-                                "type": "QRectF"
-                            }
-                        ],
-                        "name": "_q_repaintContents",
-                        "returnType": "void"
-                    },
-                    {
-                        "access": "private",
-                        "arguments": [
-                            {
-                                "type": "QTextCharFormat"
-                            }
-                        ],
-                        "name": "_q_currentCharFormatChanged",
-                        "returnType": "void"
-                    },
-                    {
-                        "access": "private",
-                        "name": "_q_adjustScrollbars",
-                        "returnType": "void"
-                    },
-                    {
-                        "access": "private",
-                        "arguments": [
-                            {
-                                "type": "QRectF"
-                            }
-                        ],
-                        "name": "_q_ensureVisible",
-                        "returnType": "void"
-                    },
-                    {
-                        "access": "private",
-                        "name": "_q_cursorPositionChanged",
-                        "returnType": "void"
-                    },
-                    {
-                        "access": "private",
-                        "arguments": [
-                            {
-                                "type": "QTextBlock"
-                            }
-                        ],
-                        "name": "_q_hoveredBlockWithMarkerChanged",
-                        "returnType": "void"
                     }
                 ],
                 "superClasses": [
@@ -19373,36 +18226,6 @@
                         ],
                         "name": "setDefaultAction",
                         "returnType": "void"
-                    },
-                    {
-                        "access": "private",
-                        "name": "_q_buttonPressed",
-                        "returnType": "void"
-                    },
-                    {
-                        "access": "private",
-                        "name": "_q_buttonReleased",
-                        "returnType": "void"
-                    },
-                    {
-                        "access": "private",
-                        "name": "_q_updateButtonDown",
-                        "returnType": "void"
-                    },
-                    {
-                        "access": "private",
-                        "arguments": [
-                            {
-                                "type": "QAction*"
-                            }
-                        ],
-                        "name": "_q_menuTriggered",
-                        "returnType": "void"
-                    },
-                    {
-                        "access": "private",
-                        "name": "_q_actionTriggered",
-                        "returnType": "void"
                     }
                 ],
                 "superClasses": [
@@ -19795,31 +18618,6 @@
                         ],
                         "name": "verticalScrollbarValueChanged",
                         "returnType": "void"
-                    },
-                    {
-                        "access": "private",
-                        "name": "_q_endAnimatedOperation",
-                        "returnType": "void"
-                    },
-                    {
-                        "access": "private",
-                        "name": "_q_modelAboutToBeReset",
-                        "returnType": "void"
-                    },
-                    {
-                        "access": "private",
-                        "arguments": [
-                            {
-                                "name": "column",
-                                "type": "int"
-                            },
-                            {
-                                "name": "order",
-                                "type": "Qt::SortOrder"
-                            }
-                        ],
-                        "name": "_q_sortIndicatorChanged",
-                        "returnType": "void"
                     }
                 ],
                 "superClasses": [
@@ -20055,144 +18853,6 @@
                     {
                         "access": "public",
                         "name": "clear",
-                        "returnType": "void"
-                    },
-                    {
-                        "access": "private",
-                        "arguments": [
-                            {
-                                "name": "index",
-                                "type": "QModelIndex"
-                            }
-                        ],
-                        "name": "_q_emitItemPressed",
-                        "returnType": "void"
-                    },
-                    {
-                        "access": "private",
-                        "arguments": [
-                            {
-                                "name": "index",
-                                "type": "QModelIndex"
-                            }
-                        ],
-                        "name": "_q_emitItemClicked",
-                        "returnType": "void"
-                    },
-                    {
-                        "access": "private",
-                        "arguments": [
-                            {
-                                "name": "index",
-                                "type": "QModelIndex"
-                            }
-                        ],
-                        "name": "_q_emitItemDoubleClicked",
-                        "returnType": "void"
-                    },
-                    {
-                        "access": "private",
-                        "arguments": [
-                            {
-                                "name": "index",
-                                "type": "QModelIndex"
-                            }
-                        ],
-                        "name": "_q_emitItemActivated",
-                        "returnType": "void"
-                    },
-                    {
-                        "access": "private",
-                        "arguments": [
-                            {
-                                "name": "index",
-                                "type": "QModelIndex"
-                            }
-                        ],
-                        "name": "_q_emitItemEntered",
-                        "returnType": "void"
-                    },
-                    {
-                        "access": "private",
-                        "arguments": [
-                            {
-                                "name": "index",
-                                "type": "QModelIndex"
-                            }
-                        ],
-                        "name": "_q_emitItemChanged",
-                        "returnType": "void"
-                    },
-                    {
-                        "access": "private",
-                        "arguments": [
-                            {
-                                "name": "index",
-                                "type": "QModelIndex"
-                            }
-                        ],
-                        "name": "_q_emitItemExpanded",
-                        "returnType": "void"
-                    },
-                    {
-                        "access": "private",
-                        "arguments": [
-                            {
-                                "name": "index",
-                                "type": "QModelIndex"
-                            }
-                        ],
-                        "name": "_q_emitItemCollapsed",
-                        "returnType": "void"
-                    },
-                    {
-                        "access": "private",
-                        "arguments": [
-                            {
-                                "name": "previous",
-                                "type": "QModelIndex"
-                            },
-                            {
-                                "name": "current",
-                                "type": "QModelIndex"
-                            }
-                        ],
-                        "name": "_q_emitCurrentItemChanged",
-                        "returnType": "void"
-                    },
-                    {
-                        "access": "private",
-                        "name": "_q_sort",
-                        "returnType": "void"
-                    },
-                    {
-                        "access": "private",
-                        "arguments": [
-                            {
-                                "name": "topLeft",
-                                "type": "QModelIndex"
-                            },
-                            {
-                                "name": "bottomRight",
-                                "type": "QModelIndex"
-                            }
-                        ],
-                        "name": "_q_dataChanged",
-                        "returnType": "void"
-                    },
-                    {
-                        "access": "private",
-                        "arguments": [
-                            {
-                                "name": "selected",
-                                "type": "QItemSelection"
-                            },
-                            {
-                                "name": "deselected",
-                                "type": "QItemSelection"
-                            }
-                        ],
-                        "name": "_q_selectionChanged",
                         "returnType": "void"
                     }
                 ],
@@ -21422,18 +20082,6 @@
                 "className": "QWidgetAction",
                 "object": true,
                 "qualifiedClassName": "QWidgetAction",
-                "slots": [
-                    {
-                        "access": "private",
-                        "arguments": [
-                            {
-                                "type": "QObject*"
-                            }
-                        ],
-                        "name": "_q_widgetDestroyed",
-                        "returnType": "void"
-                    }
-                ],
                 "superClasses": [
                     {
                         "access": "public",
@@ -23169,6 +21817,23 @@
             }
         ],
         "inputFile": "qlistwidget.cpp",
+        "outputRevision": 68
+    },
+    {
+        "classes": [
+            {
+                "className": "QMainWindowTabBar",
+                "object": true,
+                "qualifiedClassName": "QMainWindowTabBar",
+                "superClasses": [
+                    {
+                        "access": "public",
+                        "name": "QTabBar"
+                    }
+                ]
+            }
+        ],
+        "inputFile": "qmainwindowlayout.cpp",
         "outputRevision": 68
     },
     {

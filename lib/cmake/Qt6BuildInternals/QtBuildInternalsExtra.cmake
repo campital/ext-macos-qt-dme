@@ -1,3 +1,6 @@
+# Copyright (C) 2024 The Qt Company Ltd.
+# SPDX-License-Identifier: BSD-3-Clause
+
 # Propagate common variables via BuildInternals package.
 set(QT_BUILD_SHARED_LIBS ON)
 option(BUILD_SHARED_LIBS "Build Qt statically or dynamically" ON)
@@ -74,7 +77,7 @@ endif()
 set(QT_WILL_INSTALL ON CACHE BOOL
     "Boolean indicating if doing a Qt prefix build (vs non-prefix build)." FORCE)
 
-set(QT_SOURCE_TREE "/Users/william/Downloads/qtbase-everywhere-src-6.6.1" CACHE PATH
+set(QT_SOURCE_TREE "/Users/william/Downloads/qtbase-everywhere-src-6.7.2" CACHE PATH
 "A path to the source tree of the previously configured QtBase project." FORCE)
 
 # Propagate decision of building tests and examples to other repositories.
@@ -104,7 +107,7 @@ set(QT_BUILD_EXAMPLES_AS_EXTERNAL "OFF" CACHE BOOL
 set(QT_USE_CCACHE OFF CACHE BOOL "Enable the use of ccache")
 
 # Propagate usage of vcpkg, ON by default.
-set(QT_USE_VCPKG ON CACHE BOOL "Enable the use of vcpkg")
+set(QT_USE_VCPKG OFF CACHE BOOL "Enable the use of vcpkg")
 
 # Propagate usage of unity build.
 set(QT_UNITY_BUILD OFF CACHE BOOL "Enable unity (jumbo) build")
@@ -132,44 +135,6 @@ if(NOT DEFINED QT_MAX_NEW_POLICY_CMAKE_VERSION)
     set(QT_MAX_NEW_POLICY_CMAKE_VERSION "3.21")
 endif()
 
-get_property(__qt_internal_extras_is_multi_config GLOBAL PROPERTY GENERATOR_IS_MULTI_CONFIG)
-
-# We want the same build type to be used when configuring all Qt repos or standalone
-# tests or single tests.
-# To do that, we need to force-set the CMAKE_BUILD_TYPE cache var because CMake itself
-# initializes it with the value of CMAKE_BUILD_TYPE_INIT at the start of project
-# configuration, so we need to override it.
-# Note the value of CMAKE_BUILD_TYPE_INIT is different based on the platform, most
-# Linux and macOS platforms will have it empty, but Windows platforms will have a value.
-#
-# We can't reliably differentiate between a value set on the command line by the user
-# and one set by CMake, so we use a few heuristics:
-# 1) When using a qt.toolchain.cmake file, we rely on the toolchain file to tell us
-#    if a value was set by the user at initial configure time. On a 2nd run there will
-#    always be a value in the cache, but at that point we've already set it to whatever it needs
-#    to be.
-# 2) If a toolchain file is not used, we rely on the value of the CMake internal
-#    CMAKE_BUILD_TYPE_INIT variable.
-#    This won't work reliably on Windows where CMAKE_BUILD_TYPE_INIT is non-empty.
-#
-# Both cases won't handle an empty "" config set by the user, but we claim that's an
-# unsupported config when building Qt.
-#
-# Allow an opt out when QT_NO_FORCE_SET_CMAKE_BUILD_TYPE is set.
-# Finally, don't set the variable if a multi-config generator is used. This can happen
-# when qtbase is built with a single config, but a test is built with a multi-config generator.
-function(qt_internal_force_set_cmake_build_type_conditionally value)
-    # STREQUAL check needs to be expanded variables because an undefined var is not equal to an
-    # empty defined var.
-    if("${CMAKE_BUILD_TYPE}" STREQUAL "${CMAKE_BUILD_TYPE_INIT}"
-        AND NOT __qt_toolchain_cmake_build_type_before_project_call
-        AND NOT QT_NO_FORCE_SET_CMAKE_BUILD_TYPE
-        AND NOT __qt_internal_extras_is_multi_config)
-        set(CMAKE_BUILD_TYPE "${value}" CACHE STRING "Choose the type of build." FORCE)
-        set(__qt_build_internals_cmake_build_type "${value}" PARENT_SCOPE)
-    endif()
-endfunction()
-
 # Extra set of exported variables
 set(TEST_architecture_arch "x86_64" CACHE INTERNAL "")
 set(TEST_subarch_result "cx16;sse3;ssse3;sse4.1" CACHE INTERNAL "")
@@ -180,9 +145,8 @@ set(TEST_arch_x86_64_subarch_sse4.1 "1" CACHE INTERNAL "")
 set(TEST_buildAbi "x86_64-little_endian-lp64" CACHE INTERNAL "")
 set(TEST_ld_version_script "OFF" CACHE INTERNAL "")
 
+# Used by qt_internal_set_cmake_build_type.
 set(__qt_internal_initial_qt_cmake_build_type "Release")
-qt_internal_force_set_cmake_build_type_conditionally(
-    "${__qt_internal_initial_qt_cmake_build_type}")
 set(BUILD_WITH_PCH "ON" CACHE STRING "")
 set(QT_IS_MACOS_UNIVERSAL "ON" CACHE BOOL "")
 set(QT_QPA_DEFAULT_PLATFORM "cocoa" CACHE STRING "")
@@ -208,10 +172,18 @@ set(INSTALL_EXAMPLESDIR "examples" CACHE STRING "Examples [PREFIX/examples]" FOR
 set(INSTALL_TESTSDIR "tests" CACHE STRING "Tests [PREFIX/tests]" FORCE)
 set(INSTALL_DESCRIPTIONSDIR "./modules" CACHE STRING "Module description files directory" FORCE)
 
-if(DEFINED QT_REPO_MODULE_VERSION AND NOT DEFINED QT_REPO_DEPENDENCIES AND NOT QT_SUPERBUILD)
-    qt_internal_read_repo_dependencies(QT_REPO_DEPENDENCIES "${PROJECT_SOURCE_DIR}")
+set(QT_COPYRIGHT "Copyright (C) The Qt Company Ltd. and other contributors." CACHE STRING "")
+
+
+if(NOT QT_SUPPORTED_MIN_MACOS_SDK_VERSION)
+    set(QT_SUPPORTED_MIN_MACOS_SDK_VERSION "13")
 endif()
 
-set(QT_COPYRIGHT_YEAR "2023" CACHE STRING "")
-set(QT_COPYRIGHT "Copyright (C) 2023 The Qt Company Ltd and other contributors." CACHE STRING "")
+if(NOT QT_SUPPORTED_MAX_MACOS_SDK_VERSION)
+    set(QT_SUPPORTED_MAX_MACOS_SDK_VERSION "14")
+endif()
+
+if(NOT QT_SUPPORTED_MIN_MACOS_XCODE_VERSION)
+    set(QT_SUPPORTED_MIN_MACOS_XCODE_VERSION "14")
+endif()
 

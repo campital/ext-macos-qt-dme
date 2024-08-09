@@ -1,3 +1,6 @@
+# Copyright (C) 2024 The Qt Company Ltd.
+# SPDX-License-Identifier: BSD-3-Clause
+
 
 ####### Expanded from @PACKAGE_INIT@ by configure_package_config_file() #######
 ####### Any changes to this file will be overwritten by the next CMake run ####
@@ -43,8 +46,8 @@ else()
     # Make CMake's AUTOGEN detect this Qt version properly
     set_directory_properties(PROPERTIES
                              QT_VERSION_MAJOR 6
-                             QT_VERSION_MINOR 6
-                             QT_VERSION_PATCH 1)
+                             QT_VERSION_MINOR 7
+                             QT_VERSION_PATCH 2)
 endif()
 
 get_filename_component(_qt_import_prefix "${CMAKE_CURRENT_LIST_FILE}" PATH)
@@ -62,17 +65,25 @@ if(APPLE)
 endif()
 
 # Public helpers available to all Qt packages.
-include("${CMAKE_CURRENT_LIST_DIR}/QtFeature.cmake")
-include("${CMAKE_CURRENT_LIST_DIR}/QtPublicAppleHelpers.cmake")
-include("${CMAKE_CURRENT_LIST_DIR}/QtPublicFinalizerHelpers.cmake")
-include("${CMAKE_CURRENT_LIST_DIR}/QtPublicPluginHelpers.cmake")
-include("${CMAKE_CURRENT_LIST_DIR}/QtPublicTargetHelpers.cmake")
-include("${CMAKE_CURRENT_LIST_DIR}/QtPublicWalkLibsHelpers.cmake")
-include("${CMAKE_CURRENT_LIST_DIR}/QtPublicFindPackageHelpers.cmake")
-include("${CMAKE_CURRENT_LIST_DIR}/QtPublicDependencyHelpers.cmake")
-include("${CMAKE_CURRENT_LIST_DIR}/QtPublicTestHelpers.cmake")
-include("${CMAKE_CURRENT_LIST_DIR}/QtPublicToolHelpers.cmake")
-include("${CMAKE_CURRENT_LIST_DIR}/QtPublicCMakeHelpers.cmake")
+set(__qt_public_files_to_include
+    QtFeature
+    QtFeatureCommon
+    QtPublicAppleHelpers
+    QtPublicCMakeHelpers
+    QtPublicCMakeVersionHelpers
+    QtPublicDependencyHelpers
+    QtPublicExternalProjectHelpers
+    QtPublicFinalizerHelpers
+    QtPublicFindPackageHelpers
+    QtPublicPluginHelpers
+    QtPublicTargetHelpers
+    QtPublicTestHelpers
+    QtPublicToolHelpers
+    QtPublicWalkLibsHelpers
+)
+foreach(__qt_public_file_to_include IN LISTS __qt_public_files_to_include)
+    include("${__qt_public_file_to_include}")
+endforeach()
 
 set(QT_ADDITIONAL_PACKAGES_PREFIX_PATH "" CACHE STRING
     "Additional directories where find(Qt6 ...) components are searched")
@@ -90,6 +101,8 @@ __qt_internal_prefix_paths_to_roots(_qt_additional_host_packages_root_paths
 if(NOT DEFINED QT_CMAKE_EXPORT_NAMESPACE)
     set(QT_CMAKE_EXPORT_NAMESPACE Qt6)
 endif()
+
+__qt_internal_collect_additional_module_paths()
 
 # Propagate sanitizer flags to both internal Qt builds and user projects.
 # Allow opt-out in case if downstream projects handle it in a different way.
@@ -157,9 +170,9 @@ foreach(module ${Qt6_FIND_COMPONENTS})
             ${Qt6_FIND_VERSION}
             ${_Qt6_FIND_PARTS_QUIET}
             PATHS
+                ${QT_BUILD_CMAKE_PREFIX_PATH}
                 ${_qt_cmake_dir}
                 ${_qt_additional_packages_prefix_paths}
-                ${QT_EXAMPLES_CMAKE_PREFIX_PATH}
                 ${__qt_find_package_host_qt_path}
                 ${_qt_additional_host_packages_prefix_paths}
             ${__qt_use_no_default_path_for_qt_packages}

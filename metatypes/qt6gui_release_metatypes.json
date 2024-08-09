@@ -2,76 +2,6 @@
     {
         "classes": [
             {
-                "className": "QPlatformServiceColorPicker",
-                "object": true,
-                "qualifiedClassName": "QPlatformServiceColorPicker",
-                "signals": [
-                    {
-                        "access": "public",
-                        "arguments": [
-                            {
-                                "name": "color",
-                                "type": "QColor"
-                            }
-                        ],
-                        "name": "colorPicked",
-                        "returnType": "void"
-                    }
-                ],
-                "superClasses": [
-                    {
-                        "access": "public",
-                        "name": "QObject"
-                    }
-                ]
-            }
-        ],
-        "inputFile": "qplatformservices.h",
-        "outputRevision": 68
-    },
-    {
-        "classes": [
-            {
-                "className": "QWaylandWindow",
-                "object": true,
-                "qualifiedClassName": "QNativeInterface::Private::QWaylandWindow",
-                "signals": [
-                    {
-                        "access": "public",
-                        "name": "surfaceCreated",
-                        "returnType": "void"
-                    },
-                    {
-                        "access": "public",
-                        "name": "surfaceDestroyed",
-                        "returnType": "void"
-                    },
-                    {
-                        "access": "public",
-                        "arguments": [
-                            {
-                                "name": "token",
-                                "type": "QString"
-                            }
-                        ],
-                        "name": "xdgActivationTokenCreated",
-                        "returnType": "void"
-                    }
-                ],
-                "superClasses": [
-                    {
-                        "access": "public",
-                        "name": "QObject"
-                    }
-                ]
-            }
-        ],
-        "inputFile": "qplatformwindow_p.h",
-        "outputRevision": 68
-    },
-    {
-        "classes": [
-            {
                 "className": "QCoreTextFontEngine",
                 "enums": [
                     {
@@ -2351,6 +2281,7 @@
                             "StyleNameResolved",
                             "FamiliesResolved",
                             "FeaturesResolved",
+                            "VariableAxesResolved",
                             "AllPropertiesResolved"
                         ]
                     }
@@ -2511,7 +2442,7 @@
                         "write": "setLayoutDirection"
                     },
                     {
-                        "constant": false,
+                        "constant": true,
                         "designable": true,
                         "final": false,
                         "index": 4,
@@ -3413,6 +3344,25 @@
                             "Backspace",
                             "Cancel"
                         ]
+                    },
+                    {
+                        "isClass": false,
+                        "isFlag": false,
+                        "name": "SequenceFormat",
+                        "values": [
+                            "NativeText",
+                            "PortableText"
+                        ]
+                    },
+                    {
+                        "isClass": false,
+                        "isFlag": false,
+                        "name": "SequenceMatch",
+                        "values": [
+                            "NoMatch",
+                            "PartialMatch",
+                            "ExactMatch"
+                        ]
                     }
                 ],
                 "gadget": true,
@@ -4003,7 +3953,8 @@
                         "values": [
                             "ShowAlphaChannel",
                             "NoButtons",
-                            "DontUseNativeDialog"
+                            "DontUseNativeDialog",
+                            "NoEyeDropperButton"
                         ]
                     }
                 ],
@@ -4536,6 +4487,36 @@
             }
         ],
         "inputFile": "qplatformnativeinterface.h",
+        "outputRevision": 68
+    },
+    {
+        "classes": [
+            {
+                "className": "QPlatformServiceColorPicker",
+                "object": true,
+                "qualifiedClassName": "QPlatformServiceColorPicker",
+                "signals": [
+                    {
+                        "access": "public",
+                        "arguments": [
+                            {
+                                "name": "color",
+                                "type": "QColor"
+                            }
+                        ],
+                        "name": "colorPicked",
+                        "returnType": "void"
+                    }
+                ],
+                "superClasses": [
+                    {
+                        "access": "public",
+                        "name": "QObject"
+                    }
+                ]
+            }
+        ],
+        "inputFile": "qplatformservices.h",
         "outputRevision": 68
     },
     {

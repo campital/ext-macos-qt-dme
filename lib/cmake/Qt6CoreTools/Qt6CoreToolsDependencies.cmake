@@ -1,3 +1,6 @@
+# Copyright (C) 2024 The Qt Company Ltd.
+# SPDX-License-Identifier: BSD-3-Clause
+
 # Find "ModuleTools" dependencies, which are other ModuleTools packages.
 set(Qt6CoreTools_FOUND FALSE)
 set(__qt_CoreTools_tool_deps "")

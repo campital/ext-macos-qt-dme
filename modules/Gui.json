@@ -1,7 +1,7 @@
 {
     "name": "Gui",
     "repository": "qtbase",
-    "version": "6.6.1",
+    "version": "6.7.2",
     "plugin_types": ["accessiblebridge", "platforms", "platforms/darwin", "xcbglintegrations", "platformthemes", "platforminputcontexts", "generic", "iconengines", "imageformats", "egldeviceintegrations"],
     "built_with": {
         "compiler_id": "AppleClang",

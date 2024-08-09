@@ -1,9 +1,9 @@
-QT.jpeg_private.VERSION = 6.6.1
+QT.jpeg_private.VERSION = 6.7.2
 QT.jpeg_private.name = QtJpeg
 QT.jpeg_private.module = 
 QT.jpeg_private.libs = $$QT_MODULE_LIB_BASE
 QT.jpeg_private.ldflags = 
-QT.jpeg_private.includes = $$QT_MODULE_INCLUDE_BASE $$QT_MODULE_INCLUDE_BASE/QtJpeg $$QT_MODULE_INCLUDE_BASE/QtJpeg/6.6.1 $$QT_MODULE_INCLUDE_BASE/QtJpeg/6.6.1/QtJpeg
+QT.jpeg_private.includes = $$QT_MODULE_INCLUDE_BASE $$QT_MODULE_INCLUDE_BASE/QtJpeg $$QT_MODULE_INCLUDE_BASE/QtJpeg/6.7.2 $$QT_MODULE_INCLUDE_BASE/QtJpeg/6.7.2/QtJpeg
 QT.jpeg_private.frameworks = 
 QT.jpeg_private.bins = $$QT_MODULE_BIN_BASE
 QT.jpeg_private.depends =  

@@ -1,9 +1,9 @@
-QT.example_icons_private.VERSION = 6.6.1
+QT.example_icons_private.VERSION = 6.7.2
 QT.example_icons_private.name = QtExampleIcons
 QT.example_icons_private.module = Qt6ExampleIcons
 QT.example_icons_private.libs = $$QT_MODULE_LIB_BASE
 QT.example_icons_private.ldflags = 
-QT.example_icons_private.includes = $$QT_MODULE_INCLUDE_BASE $$QT_MODULE_INCLUDE_BASE/QtExampleIcons $$QT_MODULE_INCLUDE_BASE/QtExampleIcons/6.6.1 $$QT_MODULE_INCLUDE_BASE/QtExampleIcons/6.6.1/QtExampleIcons
+QT.example_icons_private.includes = $$QT_MODULE_INCLUDE_BASE $$QT_MODULE_INCLUDE_BASE/QtExampleIcons $$QT_MODULE_INCLUDE_BASE/QtExampleIcons/6.7.2 $$QT_MODULE_INCLUDE_BASE/QtExampleIcons/6.7.2/QtExampleIcons
 QT.example_icons_private.frameworks = 
 QT.example_icons_private.bins = $$QT_MODULE_BIN_BASE
 QT.example_icons_private.depends =  

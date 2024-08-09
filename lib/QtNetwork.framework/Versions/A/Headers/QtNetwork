@@ -17,6 +17,7 @@
 #if QT_CONFIG(http)
 #include "qhttp2configuration.h"
 #endif
+#include "qhttpheaders.h"
 #if QT_CONFIG(http)
 #include "qhttpmultipart.h"
 #endif
@@ -38,10 +39,13 @@
 #include "qnetworkproxy.h"
 #include "qnetworkreply.h"
 #include "qnetworkrequest.h"
+#include "qnetworkrequestfactory.h"
 #if QT_CONFIG(ssl)
 #include "qocspresponse.h"
 #endif
 #include "qpassworddigestor.h"
+#include "qrestaccessmanager.h"
+#include "qrestreply.h"
 #include "qssl.h"
 #include "qsslcertificate.h"
 #include "qsslcertificateextension.h"

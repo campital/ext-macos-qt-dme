@@ -3,11 +3,11 @@
 if("${CMAKE_MAJOR_VERSION}.${CMAKE_MINOR_VERSION}" LESS 2.8)
    message(FATAL_ERROR "CMake >= 2.8.0 required")
 endif()
-if(CMAKE_VERSION VERSION_LESS "2.8.3")
-   message(FATAL_ERROR "CMake >= 2.8.3 required")
+if(CMAKE_VERSION VERSION_LESS "3.1.0")
+   message(FATAL_ERROR "CMake >= 3.1.0 required")
 endif()
 cmake_policy(PUSH)
-cmake_policy(VERSION 2.8.3...3.26)
+cmake_policy(VERSION 3.1.0...3.28)
 #----------------------------------------------------------------
 # Generated CMake target import file.
 #----------------------------------------------------------------
@@ -67,7 +67,7 @@ set_target_properties(Qt6::Widgets PROPERTIES
   INTERFACE_QT_MAJOR_VERSION "6"
   INTERFACE_SOURCES "\$<\$<BOOL:\$<TARGET_PROPERTY:QT_CONSUMES_METATYPES>>:${_IMPORT_PREFIX}/./metatypes/qt6widgets_release_metatypes.json>"
   MODULE_PLUGIN_TYPES "styles"
-  QT_DISABLED_PRIVATE_FEATURES "gtk3;style_windowsvista;style_android"
+  QT_DISABLED_PRIVATE_FEATURES "gtk3;style_windowsvista;style_windows11;style_android"
   QT_DISABLED_PUBLIC_FEATURES ""
   QT_ENABLED_PRIVATE_FEATURES "style_fusion;style_mac;style_windows;effects;widgettextcontrol"
   QT_ENABLED_PUBLIC_FEATURES "style_stylesheet;itemviews;treewidget;listwidget;tablewidget;abstractbutton;commandlinkbutton;datetimeedit;stackedwidget;textbrowser;splashscreen;splitter;label;formlayout;lcdnumber;menu;lineedit;radiobutton;spinbox;tabbar;tabwidget;combobox;fontcombobox;checkbox;pushbutton;toolbutton;toolbar;toolbox;groupbox;buttongroup;mainwindow;dockwidget;mdiarea;resizehandler;statusbar;menubar;contextmenu;progressbar;abstractslider;slider;scrollbar;dial;scrollarea;scroller;graphicsview;graphicseffect;textedit;syntaxhighlighter;rubberband;tooltip;statustip;sizegrip;calendarwidget;keysequenceedit;dialog;dialogbuttonbox;messagebox;colordialog;filedialog;fontdialog;progressdialog;inputdialog;errormessage;wizard;listview;tableview;treeview;datawidgetmapper;columnview;completer;fscompleter;undoview"
@@ -82,7 +82,7 @@ set_target_properties(Qt6::Widgets PROPERTIES
   _qt_module_include_name "QtWidgets"
   _qt_module_interface_name "Widgets"
   _qt_package_name "Qt6Widgets"
-  _qt_package_version "6.6.1"
+  _qt_package_version "6.7.2"
   _qt_private_module_target_name "WidgetsPrivate"
 )
 
@@ -90,18 +90,14 @@ set_target_properties(Qt6::Widgets PROPERTIES
 add_library(Qt6::WidgetsPrivate INTERFACE IMPORTED)
 
 set_target_properties(Qt6::WidgetsPrivate PROPERTIES
-  INTERFACE_INCLUDE_DIRECTORIES "\$<\$<BOOL:\$<TARGET_PROPERTY:Qt6::Widgets,_qt_module_has_private_headers>>:>;\$<\$<BOOL:\$<TARGET_PROPERTY:Qt6::Widgets,_qt_module_has_private_headers>>:>;\$<\$<BOOL:\$<TARGET_PROPERTY:Qt6::Widgets,_qt_module_has_private_headers>>:${_IMPORT_PREFIX}/lib/QtWidgets.framework/Versions/A/Headers/6.6.1>;\$<\$<BOOL:\$<TARGET_PROPERTY:Qt6::Widgets,_qt_module_has_private_headers>>:${_IMPORT_PREFIX}/lib/QtWidgets.framework/Versions/A/Headers/6.6.1/QtWidgets>"
+  INTERFACE_INCLUDE_DIRECTORIES "\$<\$<BOOL:\$<TARGET_PROPERTY:Qt6::Widgets,_qt_module_has_private_headers>>:>;\$<\$<BOOL:\$<TARGET_PROPERTY:Qt6::Widgets,_qt_module_has_private_headers>>:>;\$<\$<BOOL:\$<TARGET_PROPERTY:Qt6::Widgets,_qt_module_has_private_headers>>:${_IMPORT_PREFIX}/lib/QtWidgets.framework/Versions/A/Headers/6.7.2>;\$<\$<BOOL:\$<TARGET_PROPERTY:Qt6::Widgets,_qt_module_has_private_headers>>:${_IMPORT_PREFIX}/lib/QtWidgets.framework/Versions/A/Headers/6.7.2/QtWidgets>"
   INTERFACE_LINK_LIBRARIES "Qt6::CorePrivate;Qt6::GuiPrivate;Qt6::Widgets"
   _qt_config_module_name "widgets_private"
   _qt_is_private_module "TRUE"
   _qt_package_name "Qt6Widgets"
-  _qt_package_version "6.6.1"
+  _qt_package_version "6.7.2"
   _qt_public_module_target_name "Widgets"
 )
-
-if(CMAKE_VERSION VERSION_LESS 3.1.0)
-  message(FATAL_ERROR "This file relies on consumers using CMake 3.1.0 or greater.")
-endif()
 
 # Load information for each installed configuration.
 file(GLOB _cmake_config_files "${CMAKE_CURRENT_LIST_DIR}/Qt6WidgetsTargets-*.cmake")
@@ -116,9 +112,12 @@ set(_IMPORT_PREFIX)
 
 # Loop over all imported files and verify that they actually exist
 foreach(_cmake_target IN LISTS _cmake_import_check_targets)
-  foreach(_cmake_file IN LISTS "_cmake_import_check_files_for_${_cmake_target}")
-    if(NOT EXISTS "${_cmake_file}")
-      message(FATAL_ERROR "The imported target \"${_cmake_target}\" references the file
+  if(CMAKE_VERSION VERSION_LESS "3.28"
+      OR NOT DEFINED _cmake_import_check_xcframework_for_${_cmake_target}
+      OR NOT IS_DIRECTORY "${_cmake_import_check_xcframework_for_${_cmake_target}}")
+    foreach(_cmake_file IN LISTS "_cmake_import_check_files_for_${_cmake_target}")
+      if(NOT EXISTS "${_cmake_file}")
+        message(FATAL_ERROR "The imported target \"${_cmake_target}\" references the file
    \"${_cmake_file}\"
 but this file does not exist.  Possible reasons include:
 * The file was deleted, renamed, or moved to another location.
@@ -127,8 +126,9 @@ but this file does not exist.  Possible reasons include:
    \"${CMAKE_CURRENT_LIST_FILE}\"
 but not all the files it references.
 ")
-    endif()
-  endforeach()
+      endif()
+    endforeach()
+  endif()
   unset(_cmake_file)
   unset("_cmake_import_check_files_for_${_cmake_target}")
 endforeach()

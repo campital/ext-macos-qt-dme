@@ -466,6 +466,7 @@
                         "isFlag": false,
                         "name": "ApplicationAttribute",
                         "values": [
+                            "AA_QtQuickUseDefaultSizePolicy",
                             "AA_DontShowIconsInMenus",
                             "AA_NativeWindows",
                             "AA_DontCreateNativeWidgetSiblings",
@@ -629,6 +630,7 @@
                             "Key_twosuperior",
                             "Key_threesuperior",
                             "Key_acute",
+                            "Key_micro",
                             "Key_mu",
                             "Key_paragraph",
                             "Key_periodcentered",
@@ -1920,6 +1922,30 @@
             }
         ],
         "inputFile": "qnamespace.h",
+        "outputRevision": 68
+    },
+    {
+        "classes": [
+            {
+                "className": "QSingleShotTimer",
+                "object": true,
+                "qualifiedClassName": "QSingleShotTimer",
+                "signals": [
+                    {
+                        "access": "public",
+                        "name": "timeout",
+                        "returnType": "void"
+                    }
+                ],
+                "superClasses": [
+                    {
+                        "access": "public",
+                        "name": "QObject"
+                    }
+                ]
+            }
+        ],
+        "inputFile": "qsingleshottimer_p.h",
         "outputRevision": 68
     },
     {
@@ -4009,207 +4035,6 @@
                 ],
                 "object": true,
                 "qualifiedClassName": "QConcatenateTablesProxyModel",
-                "slots": [
-                    {
-                        "access": "private",
-                        "arguments": [
-                            {
-                                "type": "QModelIndex"
-                            },
-                            {
-                                "name": "start",
-                                "type": "int"
-                            },
-                            {
-                                "name": "end",
-                                "type": "int"
-                            }
-                        ],
-                        "name": "_q_slotRowsAboutToBeInserted",
-                        "returnType": "void"
-                    },
-                    {
-                        "access": "private",
-                        "arguments": [
-                            {
-                                "type": "QModelIndex"
-                            },
-                            {
-                                "name": "start",
-                                "type": "int"
-                            },
-                            {
-                                "name": "end",
-                                "type": "int"
-                            }
-                        ],
-                        "name": "_q_slotRowsInserted",
-                        "returnType": "void"
-                    },
-                    {
-                        "access": "private",
-                        "arguments": [
-                            {
-                                "type": "QModelIndex"
-                            },
-                            {
-                                "name": "start",
-                                "type": "int"
-                            },
-                            {
-                                "name": "end",
-                                "type": "int"
-                            }
-                        ],
-                        "name": "_q_slotRowsAboutToBeRemoved",
-                        "returnType": "void"
-                    },
-                    {
-                        "access": "private",
-                        "arguments": [
-                            {
-                                "type": "QModelIndex"
-                            },
-                            {
-                                "name": "start",
-                                "type": "int"
-                            },
-                            {
-                                "name": "end",
-                                "type": "int"
-                            }
-                        ],
-                        "name": "_q_slotRowsRemoved",
-                        "returnType": "void"
-                    },
-                    {
-                        "access": "private",
-                        "arguments": [
-                            {
-                                "name": "parent",
-                                "type": "QModelIndex"
-                            },
-                            {
-                                "name": "start",
-                                "type": "int"
-                            },
-                            {
-                                "name": "end",
-                                "type": "int"
-                            }
-                        ],
-                        "name": "_q_slotColumnsAboutToBeInserted",
-                        "returnType": "void"
-                    },
-                    {
-                        "access": "private",
-                        "arguments": [
-                            {
-                                "name": "parent",
-                                "type": "QModelIndex"
-                            },
-                            {
-                                "type": "int"
-                            },
-                            {
-                                "type": "int"
-                            }
-                        ],
-                        "name": "_q_slotColumnsInserted",
-                        "returnType": "void"
-                    },
-                    {
-                        "access": "private",
-                        "arguments": [
-                            {
-                                "name": "parent",
-                                "type": "QModelIndex"
-                            },
-                            {
-                                "name": "start",
-                                "type": "int"
-                            },
-                            {
-                                "name": "end",
-                                "type": "int"
-                            }
-                        ],
-                        "name": "_q_slotColumnsAboutToBeRemoved",
-                        "returnType": "void"
-                    },
-                    {
-                        "access": "private",
-                        "arguments": [
-                            {
-                                "name": "parent",
-                                "type": "QModelIndex"
-                            },
-                            {
-                                "type": "int"
-                            },
-                            {
-                                "type": "int"
-                            }
-                        ],
-                        "name": "_q_slotColumnsRemoved",
-                        "returnType": "void"
-                    },
-                    {
-                        "access": "private",
-                        "arguments": [
-                            {
-                                "name": "from",
-                                "type": "QModelIndex"
-                            },
-                            {
-                                "name": "to",
-                                "type": "QModelIndex"
-                            },
-                            {
-                                "name": "roles",
-                                "type": "QList<int>"
-                            }
-                        ],
-                        "name": "_q_slotDataChanged",
-                        "returnType": "void"
-                    },
-                    {
-                        "access": "private",
-                        "arguments": [
-                            {
-                                "type": "QList<QPersistentModelIndex>"
-                            },
-                            {
-                                "type": "QAbstractItemModel::LayoutChangeHint"
-                            }
-                        ],
-                        "name": "_q_slotSourceLayoutAboutToBeChanged",
-                        "returnType": "void"
-                    },
-                    {
-                        "access": "private",
-                        "arguments": [
-                            {
-                                "type": "QList<QPersistentModelIndex>"
-                            },
-                            {
-                                "type": "QAbstractItemModel::LayoutChangeHint"
-                            }
-                        ],
-                        "name": "_q_slotSourceLayoutChanged",
-                        "returnType": "void"
-                    },
-                    {
-                        "access": "private",
-                        "name": "_q_slotModelAboutToBeReset",
-                        "returnType": "void"
-                    },
-                    {
-                        "access": "private",
-                        "name": "_q_slotModelReset",
-                        "returnType": "void"
-                    }
-                ],
                 "superClasses": [
                     {
                         "access": "public",
@@ -4547,6 +4372,10 @@
                             "TabletTrackingChange",
                             "WindowAboutToChangeInternal",
                             "DevicePixelRatioChange",
+                            "ChildWindowAdded",
+                            "ChildWindowRemoved",
+                            "ParentWindowAboutToChange",
+                            "ParentWindowChange",
                             "User",
                             "MaxUser"
                         ]
@@ -6399,6 +6228,9 @@
                             "Ligurian",
                             "Rohingya",
                             "Torwali",
+                            "Anii",
+                            "Kangri",
+                            "Venetian",
                             "Afan",
                             "Bengali",
                             "Bhutani",
@@ -6908,6 +6740,16 @@
                             "RejectLeadingZeroInExponent",
                             "IncludeTrailingZeroesAfterDot",
                             "RejectTrailingZeroesAfterDot"
+                        ]
+                    },
+                    {
+                        "isClass": true,
+                        "isFlag": false,
+                        "name": "TagSeparator",
+                        "type": "char",
+                        "values": [
+                            "Dash",
+                            "Underscore"
                         ]
                     },
                     {
@@ -8361,7 +8203,9 @@
                             "AppDataLocation",
                             "AppConfigLocation",
                             "PublicShareLocation",
-                            "TemplatesLocation"
+                            "TemplatesLocation",
+                            "StateLocation",
+                            "GenericStateLocation"
                         ]
                     },
                     {
@@ -9145,13 +8989,13 @@
     {
         "classes": [
             {
-                "className": "QBasicFutureWatcher",
+                "className": "QObjectContinuationWrapper",
                 "object": true,
-                "qualifiedClassName": "QBasicFutureWatcher",
+                "qualifiedClassName": "QObjectContinuationWrapper",
                 "signals": [
                     {
                         "access": "public",
-                        "name": "finished",
+                        "name": "run",
                         "returnType": "void"
                     }
                 ],
@@ -9159,10 +9003,6 @@
                     {
                         "access": "public",
                         "name": "QObject"
-                    },
-                    {
-                        "access": "public",
-                        "name": "QFutureCallOutInterface"
                     }
                 ]
             }
@@ -9185,30 +9025,6 @@
             }
         ],
         "inputFile": "qthreadpool.cpp",
-        "outputRevision": 68
-    },
-    {
-        "classes": [
-            {
-                "className": "QSingleShotTimer",
-                "object": true,
-                "qualifiedClassName": "QSingleShotTimer",
-                "signals": [
-                    {
-                        "access": "public",
-                        "name": "timeout",
-                        "returnType": "void"
-                    }
-                ],
-                "superClasses": [
-                    {
-                        "access": "public",
-                        "name": "QObject"
-                    }
-                ]
-            }
-        ],
-        "inputFile": "qtimer.cpp",
         "outputRevision": 68
     },
     {
@@ -9287,16 +9103,6 @@
                     {
                         "access": "public",
                         "name": "deleteLater",
-                        "returnType": "void"
-                    },
-                    {
-                        "access": "private",
-                        "arguments": [
-                            {
-                                "type": "void*"
-                            }
-                        ],
-                        "name": "_q_reregisterTimers",
                         "returnType": "void"
                     }
                 ]

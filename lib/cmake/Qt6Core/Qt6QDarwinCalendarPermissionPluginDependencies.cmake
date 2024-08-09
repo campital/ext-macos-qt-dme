@@ -1,3 +1,6 @@
+# Copyright (C) 2024 The Qt Company Ltd.
+# SPDX-License-Identifier: BSD-3-Clause
+
 set(QDarwinCalendarPermissionPlugin_FOUND FALSE)
 
 # note: _third_party_deps example: "ICU\\;FALSE\\;1.0\\;i18n uc data;ZLIB\\;FALSE\\;\\;"
@@ -10,7 +13,7 @@ if(QT_DISABLE_NO_DEFAULT_PATH_IN_QT_PACKAGES)
 endif()
 
 # note: target_deps example: "Qt6Core\;5.12.0;Qt6Gui\;5.12.0"
-set(__qt_QDarwinCalendarPermissionPlugin_target_deps "Qt6Core\;6.6.1")
+set(__qt_QDarwinCalendarPermissionPlugin_target_deps "Qt6Core\;6.7.2")
 set(__qt_QDarwinCalendarPermissionPlugin_find_dependency_paths "${CMAKE_CURRENT_LIST_DIR}/..;${_qt_cmake_dir}")
 _qt_internal_find_qt_dependencies("QDarwinCalendarPermissionPlugin" __qt_QDarwinCalendarPermissionPlugin_target_deps
                                   __qt_QDarwinCalendarPermissionPlugin_find_dependency_paths)

@@ -5,7 +5,7 @@ script_dir_path=`dirname $0`
 script_dir_path=`(cd "$script_dir_path"; /bin/pwd)`
 
 # Try to use original cmake, otherwise to make it relocatable, use any cmake found in PATH.
-original_cmake_path="/opt/homebrew/Cellar/cmake/3.28.1/bin/cmake"
+original_cmake_path="/opt/homebrew/Cellar/cmake/3.30.2/bin/cmake"
 cmake_path=$original_cmake_path
 if ! test -f "$cmake_path"; then
     cmake_path="cmake"

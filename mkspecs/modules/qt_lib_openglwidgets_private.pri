@@ -1,8 +1,8 @@
-QT.openglwidgets_private.VERSION = 6.6.1
+QT.openglwidgets_private.VERSION = 6.7.2
 QT.openglwidgets_private.name = QtOpenGLWidgets
 QT.openglwidgets_private.module =
 QT.openglwidgets_private.libs = $$QT_MODULE_LIB_BASE
-QT.openglwidgets_private.includes = $$QT_MODULE_LIB_BASE/QtOpenGLWidgets.framework/Versions/A/Headers/6.6.1 $$QT_MODULE_LIB_BASE/QtOpenGLWidgets.framework/Versions/A/Headers/6.6.1/QtOpenGLWidgets
+QT.openglwidgets_private.includes = $$QT_MODULE_LIB_BASE/QtOpenGLWidgets.framework/Versions/A/Headers/6.7.2 $$QT_MODULE_LIB_BASE/QtOpenGLWidgets.framework/Versions/A/Headers/6.7.2/QtOpenGLWidgets
 QT.openglwidgets_private.frameworks = 
 QT.openglwidgets_private.depends = openglwidgets
 QT.openglwidgets_private.uses = 

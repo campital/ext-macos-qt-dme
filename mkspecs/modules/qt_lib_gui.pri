@@ -1,4 +1,4 @@
-QT.gui.VERSION = 6.6.1
+QT.gui.VERSION = 6.7.2
 QT.gui.name = QtGui
 QT.gui.module = QtGui
 QT.gui.libs = $$QT_MODULE_LIB_BASE
@@ -14,7 +14,7 @@ QT.gui.module_config = v2 lib_bundle
 QT.gui.CONFIG = opengl
 QT.gui.DEFINES = QT_GUI_LIB
 QT.gui.enabled_features = freetype harfbuzz opengl ico sessionmanager texthtmlparser textmarkdownreader textmarkdownwriter textodfwriter cssparser draganddrop action cursor clipboard wheelevent tabletevent im highdpiscaling validator standarditemmodel filesystemmodel imageformatplugin movie imageformat_bmp imageformat_ppm imageformat_xbm imageformat_xpm imageformat_png imageformat_jpeg image_heuristic_mask image_text picture colornames pdf desktopservices systemtrayicon accessibility whatsthis undocommand undostack undogroup
-QT.gui.disabled_features = accessibility-atspi-bridge fontconfig opengles2 opengles3 opengles31 opengles32 dynamicgl vulkan openvg egl xcb xcb-glx-plugin system-textmarkdownreader
+QT.gui.disabled_features = accessibility-atspi-bridge fontconfig opengles2 opengles3 opengles31 opengles32 dynamicgl vulkan openvg egl xcb xcb-glx-plugin system-textmarkdownreader wayland
 QT_CONFIG += freetype harfbuzz opengl ico sessionmanager texthtmlparser textmarkdownreader textmarkdownwriter textodfwriter cssparser draganddrop action cursor clipboard wheelevent tabletevent im highdpiscaling validator standarditemmodel filesystemmodel imageformatplugin movie imageformat_bmp imageformat_ppm imageformat_xbm imageformat_xpm imageformat_png imageformat_jpeg image_heuristic_mask image_text picture colornames pdf desktopservices systemtrayicon accessibility whatsthis undocommand undostack undogroup
 QT_MODULES += gui
 

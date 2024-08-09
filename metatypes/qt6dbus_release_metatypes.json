@@ -225,36 +225,6 @@
                         "access": "public",
                         "arguments": [
                             {
-                                "name": "key",
-                                "type": "QString"
-                            },
-                            {
-                                "name": "hook",
-                                "type": "QDBusConnectionPrivate::SignalHook"
-                            }
-                        ],
-                        "name": "signalNeedsConnecting",
-                        "returnType": "bool"
-                    },
-                    {
-                        "access": "public",
-                        "arguments": [
-                            {
-                                "name": "key",
-                                "type": "QString"
-                            },
-                            {
-                                "name": "hook",
-                                "type": "QDBusConnectionPrivate::SignalHook"
-                            }
-                        ],
-                        "name": "signalNeedsDisconnecting",
-                        "returnType": "bool"
-                    },
-                    {
-                        "access": "public",
-                        "arguments": [
-                            {
                                 "name": "name",
                                 "type": "QString"
                             },
@@ -283,17 +253,6 @@
                             }
                         ],
                         "name": "callWithCallbackFailed",
-                        "returnType": "void"
-                    },
-                    {
-                        "access": "public",
-                        "arguments": [
-                            {
-                                "name": "newConnection",
-                                "type": "QDBusConnectionPrivate*"
-                            }
-                        ],
-                        "name": "newServerConnection",
                         "returnType": "void"
                     }
                 ],
@@ -366,36 +325,6 @@
                         ],
                         "name": "relaySignal",
                         "returnType": "void"
-                    },
-                    {
-                        "access": "public",
-                        "arguments": [
-                            {
-                                "name": "key",
-                                "type": "QString"
-                            },
-                            {
-                                "name": "hook",
-                                "type": "SignalHook"
-                            }
-                        ],
-                        "name": "addSignalHook",
-                        "returnType": "bool"
-                    },
-                    {
-                        "access": "public",
-                        "arguments": [
-                            {
-                                "name": "key",
-                                "type": "QString"
-                            },
-                            {
-                                "name": "hook",
-                                "type": "SignalHook"
-                            }
-                        ],
-                        "name": "removeSignalHook",
-                        "returnType": "bool"
                     },
                     {
                         "access": "private",
@@ -756,33 +685,6 @@
                 "className": "QDBusConnectionManager",
                 "object": true,
                 "qualifiedClassName": "QDBusConnectionManager",
-                "signals": [
-                    {
-                        "access": "public",
-                        "arguments": [
-                            {
-                                "type": "ConnectionRequestData*"
-                            }
-                        ],
-                        "name": "connectionRequested",
-                        "returnType": "void"
-                    },
-                    {
-                        "access": "public",
-                        "arguments": [
-                            {
-                                "name": "address",
-                                "type": "QString"
-                            },
-                            {
-                                "name": "server",
-                                "type": "void*"
-                            }
-                        ],
-                        "name": "serverRequested",
-                        "returnType": "void"
-                    }
-                ],
                 "superClasses": [
                     {
                         "access": "public",
@@ -868,13 +770,6 @@
                         "returnType": "void"
                     }
                 ],
-                "slots": [
-                    {
-                        "access": "private",
-                        "name": "_q_finished",
-                        "returnType": "void"
-                    }
-                ],
                 "superClasses": [
                     {
                         "access": "public",
@@ -956,18 +851,6 @@
                             }
                         ],
                         "name": "newConnection",
-                        "returnType": "void"
-                    }
-                ],
-                "slots": [
-                    {
-                        "access": "private",
-                        "arguments": [
-                            {
-                                "type": "QDBusConnectionPrivate*"
-                            }
-                        ],
-                        "name": "_q_newConnection",
                         "returnType": "void"
                     }
                 ],

@@ -1,4 +1,4 @@
-QT.openglwidgets.VERSION = 6.6.1
+QT.openglwidgets.VERSION = 6.7.2
 QT.openglwidgets.name = QtOpenGLWidgets
 QT.openglwidgets.module = QtOpenGLWidgets
 QT.openglwidgets.libs = $$QT_MODULE_LIB_BASE

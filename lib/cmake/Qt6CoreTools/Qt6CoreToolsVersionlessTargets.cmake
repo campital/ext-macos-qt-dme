@@ -1,3 +1,6 @@
+# Copyright (C) 2024 The Qt Company Ltd.
+# SPDX-License-Identifier: BSD-3-Clause
+
 foreach(__qt_tool syncqt;moc;rcc;tracepointgen;tracegen;cmake_automoc_parser;qlalr;qtpaths;androiddeployqt;androidtestrunner;macdeployqt;qmake)
     if(NOT TARGET Qt::${__qt_tool} AND TARGET Qt6::${__qt_tool})
         add_executable(Qt::${__qt_tool} IMPORTED GLOBAL)

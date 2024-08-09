@@ -1,3 +1,6 @@
+# Copyright (C) 2024 The Qt Company Ltd.
+# SPDX-License-Identifier: BSD-3-Clause
+
 
 ####### Expanded from @PACKAGE_INIT@ by configure_package_config_file() #######
 ####### Any changes to this file will be overwritten by the next CMake run ####
@@ -33,6 +36,7 @@ get_filename_component(_import_prefix "${_import_prefix}" REALPATH)
 
 # Extra cmake code begin
 set(QT_KNOWN_POLICY_QTP0002 TRUE)
+set(QT_KNOWN_POLICY_QTP0003 TRUE)
 
 # Extra cmake code end
 
@@ -99,15 +103,25 @@ if (NOT QT_NO_CREATE_TARGETS AND Qt6Core_FOUND)
         ${_Qt6Core_OWN_PRIVATE_INCLUDE_DIRS})
 
     foreach(_module_dep ${_Qt6Core_MODULE_DEPENDENCIES})
-        list(APPEND Qt6Core_INCLUDE_DIRS
+        if(_module_dep MATCHES ".+Private$")
+            set(_private_suffix "Private")
+        else()
+            set(_private_suffix "")
+        endif()
+        list(APPEND Qt6Core${_private_suffix}_INCLUDE_DIRS
              ${Qt6${_module_dep}_INCLUDE_DIRS})
-        list(APPEND Qt6Core_PRIVATE_INCLUDE_DIRS
+        list(APPEND Qt6Core${_private_suffix}_PRIVATE_INCLUDE_DIRS
              ${Qt6${_module_dep}_PRIVATE_INCLUDE_DIRS})
-        list(APPEND Qt6Core_DEFINITIONS
+        if(_private_suffix)
+            list(APPEND Qt6Core_PRIVATE_INCLUDE_DIRS
+                ${Qt6${_module_dep}_PRIVATE_INCLUDE_DIRS})
+        endif()
+        list(APPEND Qt6Core${_private_suffix}_DEFINITIONS
              ${Qt6${_module_dep}_DEFINITIONS})
-        list(APPEND Qt6Core_COMPILE_DEFINITIONS
+        list(APPEND Qt6Core${_private_suffix}_COMPILE_DEFINITIONS
              ${Qt6${_module_dep}_COMPILE_DEFINITIONS})
     endforeach()
+    unset(_private_suffix)
 
     list(REMOVE_DUPLICATES Qt6Core_INCLUDE_DIRS)
     list(REMOVE_DUPLICATES Qt6Core_PRIVATE_INCLUDE_DIRS)

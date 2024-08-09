@@ -1,3 +1,6 @@
+# Copyright (C) 2024 The Qt Company Ltd.
+# SPDX-License-Identifier: BSD-3-Clause
+
 # Make sure Qt6 is found before anything else.
 set(Qt6Core_FOUND FALSE)
 
@@ -14,12 +17,12 @@ endif()
 set(${CMAKE_FIND_PACKAGE_NAME}_FIND_REQUIRED FALSE)
 
 if(NOT Qt6_FOUND)
-    find_dependency(Qt6 6.6.1
+    find_dependency(Qt6 6.7.2
         PATHS
+            ${QT_BUILD_CMAKE_PREFIX_PATH}
             "${CMAKE_CURRENT_LIST_DIR}/.."
             "${_qt_cmake_dir}"
             ${_qt_additional_packages_prefix_paths}
-            ${QT_EXAMPLES_CMAKE_PREFIX_PATH}
         ${__qt_use_no_default_path_for_qt_packages}
     )
 endif()
@@ -30,7 +33,7 @@ set(__qt_Core_third_party_deps "WrapAtomic\;FALSE\;\;\;")
 _qt_internal_find_third_party_dependencies("Core" __qt_Core_third_party_deps)
 
 # Find Qt tool package.
-set(__qt_Core_tool_deps "Qt6CoreTools\;6.6.1")
+set(__qt_Core_tool_deps "Qt6CoreTools\;6.7.2")
 _qt_internal_find_tool_dependencies("Core" __qt_Core_tool_deps)
 
 # note: target_deps example: "Qt6Core\;5.12.0;Qt6Gui\;5.12.0"

@@ -32,6 +32,372 @@
     {
         "classes": [
             {
+                "className": "QHttpHeaders",
+                "enums": [
+                    {
+                        "isClass": true,
+                        "isFlag": false,
+                        "name": "WellKnownHeader",
+                        "values": [
+                            "AIM",
+                            "Accept",
+                            "AcceptAdditions",
+                            "AcceptCH",
+                            "AcceptDatetime",
+                            "AcceptEncoding",
+                            "AcceptFeatures",
+                            "AcceptLanguage",
+                            "AcceptPatch",
+                            "AcceptPost",
+                            "AcceptRanges",
+                            "AcceptSignature",
+                            "AccessControlAllowCredentials",
+                            "AccessControlAllowHeaders",
+                            "AccessControlAllowMethods",
+                            "AccessControlAllowOrigin",
+                            "AccessControlExposeHeaders",
+                            "AccessControlMaxAge",
+                            "AccessControlRequestHeaders",
+                            "AccessControlRequestMethod",
+                            "Age",
+                            "Allow",
+                            "ALPN",
+                            "AltSvc",
+                            "AltUsed",
+                            "Alternates",
+                            "ApplyToRedirectRef",
+                            "AuthenticationControl",
+                            "AuthenticationInfo",
+                            "Authorization",
+                            "CacheControl",
+                            "CacheStatus",
+                            "CalManagedID",
+                            "CalDAVTimezones",
+                            "CapsuleProtocol",
+                            "CDNCacheControl",
+                            "CDNLoop",
+                            "CertNotAfter",
+                            "CertNotBefore",
+                            "ClearSiteData",
+                            "ClientCert",
+                            "ClientCertChain",
+                            "Close",
+                            "Connection",
+                            "ContentDigest",
+                            "ContentDisposition",
+                            "ContentEncoding",
+                            "ContentID",
+                            "ContentLanguage",
+                            "ContentLength",
+                            "ContentLocation",
+                            "ContentRange",
+                            "ContentSecurityPolicy",
+                            "ContentSecurityPolicyReportOnly",
+                            "ContentType",
+                            "Cookie",
+                            "CrossOriginEmbedderPolicy",
+                            "CrossOriginEmbedderPolicyReportOnly",
+                            "CrossOriginOpenerPolicy",
+                            "CrossOriginOpenerPolicyReportOnly",
+                            "CrossOriginResourcePolicy",
+                            "DASL",
+                            "Date",
+                            "DAV",
+                            "DeltaBase",
+                            "Depth",
+                            "Destination",
+                            "DifferentialID",
+                            "DPoP",
+                            "DPoPNonce",
+                            "EarlyData",
+                            "ETag",
+                            "Expect",
+                            "ExpectCT",
+                            "Expires",
+                            "Forwarded",
+                            "From",
+                            "Hobareg",
+                            "Host",
+                            "If",
+                            "IfMatch",
+                            "IfModifiedSince",
+                            "IfNoneMatch",
+                            "IfRange",
+                            "IfScheduleTagMatch",
+                            "IfUnmodifiedSince",
+                            "IM",
+                            "IncludeReferredTokenBindingID",
+                            "KeepAlive",
+                            "Label",
+                            "LastEventID",
+                            "LastModified",
+                            "Link",
+                            "Location",
+                            "LockToken",
+                            "MaxForwards",
+                            "MementoDatetime",
+                            "Meter",
+                            "MIMEVersion",
+                            "Negotiate",
+                            "NEL",
+                            "ODataEntityId",
+                            "ODataIsolation",
+                            "ODataMaxVersion",
+                            "ODataVersion",
+                            "OptionalWWWAuthenticate",
+                            "OrderingType",
+                            "Origin",
+                            "OriginAgentCluster",
+                            "OSCORE",
+                            "OSLCCoreVersion",
+                            "Overwrite",
+                            "PingFrom",
+                            "PingTo",
+                            "Position",
+                            "Prefer",
+                            "PreferenceApplied",
+                            "Priority",
+                            "ProxyAuthenticate",
+                            "ProxyAuthenticationInfo",
+                            "ProxyAuthorization",
+                            "ProxyStatus",
+                            "PublicKeyPins",
+                            "PublicKeyPinsReportOnly",
+                            "Range",
+                            "RedirectRef",
+                            "Referer",
+                            "Refresh",
+                            "ReplayNonce",
+                            "ReprDigest",
+                            "RetryAfter",
+                            "ScheduleReply",
+                            "ScheduleTag",
+                            "SecPurpose",
+                            "SecTokenBinding",
+                            "SecWebSocketAccept",
+                            "SecWebSocketExtensions",
+                            "SecWebSocketKey",
+                            "SecWebSocketProtocol",
+                            "SecWebSocketVersion",
+                            "Server",
+                            "ServerTiming",
+                            "SetCookie",
+                            "Signature",
+                            "SignatureInput",
+                            "SLUG",
+                            "SoapAction",
+                            "StatusURI",
+                            "StrictTransportSecurity",
+                            "Sunset",
+                            "SurrogateCapability",
+                            "SurrogateControl",
+                            "TCN",
+                            "TE",
+                            "Timeout",
+                            "Topic",
+                            "Traceparent",
+                            "Tracestate",
+                            "Trailer",
+                            "TransferEncoding",
+                            "TTL",
+                            "Upgrade",
+                            "Urgency",
+                            "UserAgent",
+                            "VariantVary",
+                            "Vary",
+                            "Via",
+                            "WantContentDigest",
+                            "WantReprDigest",
+                            "WWWAuthenticate",
+                            "XContentTypeOptions",
+                            "XFrameOptions",
+                            "AcceptCharset",
+                            "CPEPInfo",
+                            "Pragma",
+                            "ProtocolInfo",
+                            "ProtocolQuery"
+                        ]
+                    }
+                ],
+                "gadget": true,
+                "qualifiedClassName": "QHttpHeaders"
+            }
+        ],
+        "inputFile": "qhttpheaders.h",
+        "outputRevision": 68
+    },
+    {
+        "classes": [
+            {
+                "className": "QSsl",
+                "enums": [
+                    {
+                        "isClass": false,
+                        "isFlag": false,
+                        "name": "KeyType",
+                        "values": [
+                            "PrivateKey",
+                            "PublicKey"
+                        ]
+                    },
+                    {
+                        "isClass": false,
+                        "isFlag": false,
+                        "name": "EncodingFormat",
+                        "values": [
+                            "Pem",
+                            "Der"
+                        ]
+                    },
+                    {
+                        "isClass": false,
+                        "isFlag": false,
+                        "name": "KeyAlgorithm",
+                        "values": [
+                            "Opaque",
+                            "Rsa",
+                            "Dsa",
+                            "Ec",
+                            "Dh"
+                        ]
+                    },
+                    {
+                        "isClass": false,
+                        "isFlag": false,
+                        "name": "AlternativeNameEntryType",
+                        "values": [
+                            "EmailEntry",
+                            "DnsEntry",
+                            "IpAddressEntry"
+                        ]
+                    },
+                    {
+                        "isClass": false,
+                        "isFlag": false,
+                        "name": "SslProtocol",
+                        "values": [
+                            "TlsV1_0",
+                            "TlsV1_1",
+                            "TlsV1_2",
+                            "AnyProtocol",
+                            "SecureProtocols",
+                            "TlsV1_0OrLater",
+                            "TlsV1_1OrLater",
+                            "TlsV1_2OrLater",
+                            "DtlsV1_0",
+                            "DtlsV1_0OrLater",
+                            "DtlsV1_2",
+                            "DtlsV1_2OrLater",
+                            "TlsV1_3",
+                            "TlsV1_3OrLater",
+                            "UnknownProtocol"
+                        ]
+                    },
+                    {
+                        "isClass": false,
+                        "isFlag": false,
+                        "name": "SslOption",
+                        "values": [
+                            "SslOptionDisableEmptyFragments",
+                            "SslOptionDisableSessionTickets",
+                            "SslOptionDisableCompression",
+                            "SslOptionDisableServerNameIndication",
+                            "SslOptionDisableLegacyRenegotiation",
+                            "SslOptionDisableSessionSharing",
+                            "SslOptionDisableSessionPersistence",
+                            "SslOptionDisableServerCipherPreference"
+                        ]
+                    },
+                    {
+                        "isClass": true,
+                        "isFlag": false,
+                        "name": "AlertLevel",
+                        "values": [
+                            "Warning",
+                            "Fatal",
+                            "Unknown"
+                        ]
+                    },
+                    {
+                        "isClass": true,
+                        "isFlag": false,
+                        "name": "AlertType",
+                        "values": [
+                            "CloseNotify",
+                            "UnexpectedMessage",
+                            "BadRecordMac",
+                            "RecordOverflow",
+                            "DecompressionFailure",
+                            "HandshakeFailure",
+                            "NoCertificate",
+                            "BadCertificate",
+                            "UnsupportedCertificate",
+                            "CertificateRevoked",
+                            "CertificateExpired",
+                            "CertificateUnknown",
+                            "IllegalParameter",
+                            "UnknownCa",
+                            "AccessDenied",
+                            "DecodeError",
+                            "DecryptError",
+                            "ExportRestriction",
+                            "ProtocolVersion",
+                            "InsufficientSecurity",
+                            "InternalError",
+                            "InappropriateFallback",
+                            "UserCancelled",
+                            "NoRenegotiation",
+                            "MissingExtension",
+                            "UnsupportedExtension",
+                            "CertificateUnobtainable",
+                            "UnrecognizedName",
+                            "BadCertificateStatusResponse",
+                            "BadCertificateHashValue",
+                            "UnknownPskIdentity",
+                            "CertificateRequired",
+                            "NoApplicationProtocol",
+                            "UnknownAlertMessage"
+                        ]
+                    },
+                    {
+                        "isClass": true,
+                        "isFlag": false,
+                        "name": "ImplementedClass",
+                        "values": [
+                            "Key",
+                            "Certificate",
+                            "Socket",
+                            "DiffieHellman",
+                            "EllipticCurve",
+                            "Dtls",
+                            "DtlsCookie"
+                        ]
+                    },
+                    {
+                        "isClass": true,
+                        "isFlag": false,
+                        "name": "SupportedFeature",
+                        "values": [
+                            "CertificateVerification",
+                            "ClientSideAlpn",
+                            "ServerSideAlpn",
+                            "Ocsp",
+                            "Psk",
+                            "SessionTicket",
+                            "Alerts"
+                        ]
+                    }
+                ],
+                "namespace": true,
+                "qualifiedClassName": "QSsl"
+            }
+        ],
+        "inputFile": "qssl.h",
+        "outputRevision": 68
+    },
+    {
+        "classes": [
+            {
                 "className": "QAbstractNetworkCache",
                 "object": true,
                 "qualifiedClassName": "QAbstractNetworkCache",
@@ -564,6 +930,19 @@
                         "returnType": "void"
                     }
                 ],
+                "slots": [
+                    {
+                        "access": "private",
+                        "arguments": [
+                            {
+                                "name": "info",
+                                "type": "QHostInfo"
+                            }
+                        ],
+                        "name": "finalizePostResultsReady",
+                        "returnType": "void"
+                    }
+                ],
                 "superClasses": [
                     {
                         "access": "public",
@@ -573,6 +952,352 @@
             }
         ],
         "inputFile": "qhostinfo_p.h",
+        "outputRevision": 68
+    },
+    {
+        "classes": [
+            {
+                "className": "QHttp2Stream",
+                "enums": [
+                    {
+                        "isClass": true,
+                        "isFlag": false,
+                        "name": "State",
+                        "values": [
+                            "Idle",
+                            "ReservedRemote",
+                            "Open",
+                            "HalfClosedLocal",
+                            "HalfClosedRemote",
+                            "Closed"
+                        ]
+                    }
+                ],
+                "object": true,
+                "qualifiedClassName": "QHttp2Stream",
+                "signals": [
+                    {
+                        "access": "public",
+                        "arguments": [
+                            {
+                                "name": "headers",
+                                "type": "HPack::HttpHeader"
+                            },
+                            {
+                                "name": "endStream",
+                                "type": "bool"
+                            }
+                        ],
+                        "name": "headersReceived",
+                        "returnType": "void"
+                    },
+                    {
+                        "access": "public",
+                        "name": "headersUpdated",
+                        "returnType": "void"
+                    },
+                    {
+                        "access": "public",
+                        "arguments": [
+                            {
+                                "name": "errorCode",
+                                "type": "quint32"
+                            },
+                            {
+                                "name": "errorString",
+                                "type": "QString"
+                            }
+                        ],
+                        "name": "errorOccurred",
+                        "returnType": "void"
+                    },
+                    {
+                        "access": "public",
+                        "arguments": [
+                            {
+                                "name": "newState",
+                                "type": "QHttp2Stream::State"
+                            }
+                        ],
+                        "name": "stateChanged",
+                        "returnType": "void"
+                    },
+                    {
+                        "access": "public",
+                        "arguments": [
+                            {
+                                "name": "newStreamID",
+                                "type": "quint32"
+                            }
+                        ],
+                        "name": "promisedStreamReceived",
+                        "returnType": "void"
+                    },
+                    {
+                        "access": "public",
+                        "name": "uploadBlocked",
+                        "returnType": "void"
+                    },
+                    {
+                        "access": "public",
+                        "arguments": [
+                            {
+                                "name": "data",
+                                "type": "QByteArray"
+                            },
+                            {
+                                "name": "endStream",
+                                "type": "bool"
+                            }
+                        ],
+                        "name": "dataReceived",
+                        "returnType": "void"
+                    },
+                    {
+                        "access": "public",
+                        "arguments": [
+                            {
+                                "name": "bytesWritten",
+                                "type": "qint64"
+                            }
+                        ],
+                        "name": "bytesWritten",
+                        "returnType": "void"
+                    },
+                    {
+                        "access": "public",
+                        "arguments": [
+                            {
+                                "name": "errorString",
+                                "type": "QString"
+                            }
+                        ],
+                        "name": "uploadDeviceError",
+                        "returnType": "void"
+                    },
+                    {
+                        "access": "public",
+                        "name": "uploadFinished",
+                        "returnType": "void"
+                    }
+                ],
+                "slots": [
+                    {
+                        "access": "public",
+                        "arguments": [
+                            {
+                                "name": "errorCode",
+                                "type": "quint32"
+                            }
+                        ],
+                        "name": "sendRST_STREAM",
+                        "returnType": "bool"
+                    },
+                    {
+                        "access": "public",
+                        "arguments": [
+                            {
+                                "name": "headers",
+                                "type": "HPack::HttpHeader"
+                            },
+                            {
+                                "name": "endStream",
+                                "type": "bool"
+                            },
+                            {
+                                "name": "priority",
+                                "type": "quint8"
+                            }
+                        ],
+                        "name": "sendHEADERS",
+                        "returnType": "bool"
+                    },
+                    {
+                        "access": "public",
+                        "arguments": [
+                            {
+                                "name": "headers",
+                                "type": "HPack::HttpHeader"
+                            },
+                            {
+                                "name": "endStream",
+                                "type": "bool"
+                            }
+                        ],
+                        "isCloned": true,
+                        "name": "sendHEADERS",
+                        "returnType": "bool"
+                    },
+                    {
+                        "access": "public",
+                        "arguments": [
+                            {
+                                "name": "device",
+                                "type": "QIODevice*"
+                            },
+                            {
+                                "name": "endStream",
+                                "type": "bool"
+                            }
+                        ],
+                        "name": "sendDATA",
+                        "returnType": "void"
+                    },
+                    {
+                        "access": "public",
+                        "arguments": [
+                            {
+                                "name": "device",
+                                "type": "QNonContiguousByteDevice*"
+                            },
+                            {
+                                "name": "endStream",
+                                "type": "bool"
+                            }
+                        ],
+                        "name": "sendDATA",
+                        "returnType": "void"
+                    },
+                    {
+                        "access": "public",
+                        "arguments": [
+                            {
+                                "name": "delta",
+                                "type": "quint32"
+                            }
+                        ],
+                        "name": "sendWINDOW_UPDATE",
+                        "returnType": "void"
+                    },
+                    {
+                        "access": "public",
+                        "name": "uploadDeviceDestroyed",
+                        "returnType": "void"
+                    },
+                    {
+                        "access": "private",
+                        "name": "maybeResumeUpload",
+                        "returnType": "void"
+                    },
+                    {
+                        "access": "private",
+                        "name": "uploadDeviceReadChannelFinished",
+                        "returnType": "void"
+                    }
+                ],
+                "superClasses": [
+                    {
+                        "access": "public",
+                        "name": "QObject"
+                    }
+                ]
+            },
+            {
+                "className": "QHttp2Connection",
+                "enums": [
+                    {
+                        "isClass": true,
+                        "isFlag": false,
+                        "name": "CreateStreamError",
+                        "values": [
+                            "MaxConcurrentStreamsReached",
+                            "StreamIdsExhausted",
+                            "ReceivedGOAWAY"
+                        ]
+                    }
+                ],
+                "object": true,
+                "qualifiedClassName": "QHttp2Connection",
+                "signals": [
+                    {
+                        "access": "public",
+                        "arguments": [
+                            {
+                                "name": "stream",
+                                "type": "QHttp2Stream*"
+                            }
+                        ],
+                        "name": "newIncomingStream",
+                        "returnType": "void"
+                    },
+                    {
+                        "access": "public",
+                        "arguments": [
+                            {
+                                "name": "stream",
+                                "type": "QHttp2Stream*"
+                            }
+                        ],
+                        "name": "newPromisedStream",
+                        "returnType": "void"
+                    },
+                    {
+                        "access": "public",
+                        "name": "errorReceived",
+                        "returnType": "void"
+                    },
+                    {
+                        "access": "public",
+                        "name": "connectionClosed",
+                        "returnType": "void"
+                    },
+                    {
+                        "access": "public",
+                        "name": "settingsFrameReceived",
+                        "returnType": "void"
+                    },
+                    {
+                        "access": "public",
+                        "arguments": [
+                            {
+                                "name": "errorCode",
+                                "type": "Http2::Http2Error"
+                            },
+                            {
+                                "name": "errorString",
+                                "type": "QString"
+                            }
+                        ],
+                        "name": "errorOccurred",
+                        "returnType": "void"
+                    },
+                    {
+                        "access": "public",
+                        "arguments": [
+                            {
+                                "name": "errorCode",
+                                "type": "quint32"
+                            },
+                            {
+                                "name": "lastStreamID",
+                                "type": "quint32"
+                            }
+                        ],
+                        "name": "receivedGOAWAY",
+                        "returnType": "void"
+                    }
+                ],
+                "slots": [
+                    {
+                        "access": "public",
+                        "name": "handleReadyRead",
+                        "returnType": "void"
+                    },
+                    {
+                        "access": "public",
+                        "name": "handleConnectionClosure",
+                        "returnType": "void"
+                    }
+                ],
+                "superClasses": [
+                    {
+                        "access": "public",
+                        "name": "QObject"
+                    }
+                ]
+            }
+        ],
+        "inputFile": "qhttp2connection_p.h",
         "outputRevision": 68
     },
     {
@@ -2252,6 +2977,12 @@
     {
         "classes": [
             {
+                "classInfos": [
+                    {
+                        "name": "RegisterEnumClassesUnscoped",
+                        "value": "false"
+                    }
+                ],
                 "className": "QNetworkInformation",
                 "enums": [
                     {
@@ -3145,6 +3876,56 @@
     {
         "classes": [
             {
+                "className": "QNetworkRequest",
+                "enums": [
+                    {
+                        "isClass": false,
+                        "isFlag": false,
+                        "name": "KnownHeaders",
+                        "values": [
+                            "ContentTypeHeader",
+                            "ContentLengthHeader",
+                            "LocationHeader",
+                            "LastModifiedHeader",
+                            "CookieHeader",
+                            "SetCookieHeader",
+                            "ContentDispositionHeader",
+                            "UserAgentHeader",
+                            "ServerHeader",
+                            "IfModifiedSinceHeader",
+                            "ETagHeader",
+                            "IfMatchHeader",
+                            "IfNoneMatchHeader"
+                        ]
+                    }
+                ],
+                "gadget": true,
+                "qualifiedClassName": "QNetworkRequest"
+            }
+        ],
+        "inputFile": "qnetworkrequest.h",
+        "outputRevision": 68
+    },
+    {
+        "classes": [
+            {
+                "className": "QRestAccessManager",
+                "object": true,
+                "qualifiedClassName": "QRestAccessManager",
+                "superClasses": [
+                    {
+                        "access": "public",
+                        "name": "QObject"
+                    }
+                ]
+            }
+        ],
+        "inputFile": "qrestaccessmanager.h",
+        "outputRevision": 68
+    },
+    {
+        "classes": [
+            {
                 "className": "QSocks5SocketEngine",
                 "object": true,
                 "qualifiedClassName": "QSocks5SocketEngine",
@@ -3434,6 +4215,29 @@
         "classes": [
             {
                 "className": "QSslSocket",
+                "enums": [
+                    {
+                        "isClass": false,
+                        "isFlag": false,
+                        "name": "SslMode",
+                        "values": [
+                            "UnencryptedMode",
+                            "SslClientMode",
+                            "SslServerMode"
+                        ]
+                    },
+                    {
+                        "isClass": false,
+                        "isFlag": false,
+                        "name": "PeerVerifyMode",
+                        "values": [
+                            "VerifyNone",
+                            "QueryPeer",
+                            "VerifyPeer",
+                            "AutoVerifyPeer"
+                        ]
+                    }
+                ],
                 "object": true,
                 "qualifiedClassName": "QSslSocket",
                 "signals": [
@@ -3762,6 +4566,23 @@
             }
         ],
         "inputFile": "qudpsocket.h",
+        "outputRevision": 68
+    },
+    {
+        "classes": [
+            {
+                "className": "QNetworkInformationDummyBackend",
+                "object": true,
+                "qualifiedClassName": "QNetworkInformationDummyBackend",
+                "superClasses": [
+                    {
+                        "access": "public",
+                        "name": "QNetworkInformationBackend"
+                    }
+                ]
+            }
+        ],
+        "inputFile": "qnetworkinformation.cpp",
         "outputRevision": 68
     }
 ]

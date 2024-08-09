@@ -1,3 +1,6 @@
+# Copyright (C) 2024 The Qt Company Ltd.
+# SPDX-License-Identifier: BSD-3-Clause
+
 
 ####### Expanded from @PACKAGE_INIT@ by configure_package_config_file() #######
 ####### Any changes to this file will be overwritten by the next CMake run ####
@@ -98,15 +101,25 @@ if (NOT QT_NO_CREATE_TARGETS AND Qt6Gui_FOUND)
         ${_Qt6Gui_OWN_PRIVATE_INCLUDE_DIRS})
 
     foreach(_module_dep ${_Qt6Gui_MODULE_DEPENDENCIES})
-        list(APPEND Qt6Gui_INCLUDE_DIRS
+        if(_module_dep MATCHES ".+Private$")
+            set(_private_suffix "Private")
+        else()
+            set(_private_suffix "")
+        endif()
+        list(APPEND Qt6Gui${_private_suffix}_INCLUDE_DIRS
              ${Qt6${_module_dep}_INCLUDE_DIRS})
-        list(APPEND Qt6Gui_PRIVATE_INCLUDE_DIRS
+        list(APPEND Qt6Gui${_private_suffix}_PRIVATE_INCLUDE_DIRS
              ${Qt6${_module_dep}_PRIVATE_INCLUDE_DIRS})
-        list(APPEND Qt6Gui_DEFINITIONS
+        if(_private_suffix)
+            list(APPEND Qt6Gui_PRIVATE_INCLUDE_DIRS
+                ${Qt6${_module_dep}_PRIVATE_INCLUDE_DIRS})
+        endif()
+        list(APPEND Qt6Gui${_private_suffix}_DEFINITIONS
              ${Qt6${_module_dep}_DEFINITIONS})
-        list(APPEND Qt6Gui_COMPILE_DEFINITIONS
+        list(APPEND Qt6Gui${_private_suffix}_COMPILE_DEFINITIONS
              ${Qt6${_module_dep}_COMPILE_DEFINITIONS})
     endforeach()
+    unset(_private_suffix)
 
     list(REMOVE_DUPLICATES Qt6Gui_INCLUDE_DIRS)
     list(REMOVE_DUPLICATES Qt6Gui_PRIVATE_INCLUDE_DIRS)
